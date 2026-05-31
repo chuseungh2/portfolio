@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asah — Seunghee (Kelly) Chu</title>
+<meta name="description" content="Asah · AI business manager. A case study by Seunghee (Kelly) Chu.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="../#work">
+      <span class="back">← Back to work</span>Seunghee Chu
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="../#work">Work</a>
+      <a href="../#about">About</a>
+      <a href="../#playground">Playground</a>
+      <a href="../resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="wrap case-hero">
+    <p class="case-eyebrow">Case 01 / Web app</p>
+    <h1>Asah</h1>
+    <p class="tagline">An AI business manager for founders who'd rather build than manage.</p>
+
+    <div class="case-hero-visual placeholder-visual" role="img" aria-label="Placeholder for lead screen from New Asah — Office or Manage Team">
+      <span class="visual-label">Hero visual placeholder · New Asah Office or Manage Team</span>
+    </div>
+
+    <dl class="case-meta-strip">
+      <div><dt>Type</dt><dd>Web app (mobile planned)</dd></div>
+      <div><dt>Timeline</dt><dd>Feb 2026 – present</dd></div>
+      <div><dt>My role</dt><dd>Backend &amp; RAG lead, shared design &amp; research</dd></div>
+      <div><dt>Tools</dt><dd>Figma, <span class="inline-note">[Kelly: other tools]</span></dd></div>
+      <div><dt>Team</dt><dd>Team of 3</dd></div>
+      <div><dt>Context</dt><dd>Built for the Amazon Nova Hackathon</dd></div>
+    </dl>
+  </section>
+
+  <section class="wrap snapshot">
+    <div class="snap-block">
+      <p class="snap-label">— The problem</p>
+      <p>Solo founders and small startup teams carry the entire business on their shoulders — operations, planning, admin — usually with no business-management expertise on the team.</p>
+    </div>
+    <div class="snap-block">
+      <p class="snap-label">— The outcome</p>
+      <p>Asah, an AI business manager that takes the business side off the founder's plate. Users hire specialized AI agents like employees, and Asah supervises and coordinates them — no babysitting, no code. <span class="inline-note">[Kelly: one line of test/feedback result, if any]</span></p>
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">01</span>
+      <h2>Context &amp; <em>problem</em></h2>
+    </div>
+    <div class="case-body">
+      <p>Most startups begin as a single good idea. The founder is usually a designer, an engineer, or a domain expert — rarely a business operator. Yet the moment the idea becomes a company, the business side arrives all at once: operations, scheduling, planning, coordination, admin. It's work that has to happen, and it quietly eats the hours that should go into the product itself.</p>
+      <p>There are AI tools that promise to help. But they tend to be fragmented — a different tool for every task — and most assume the user is already comfortable with AI agents, prompts, and configuration. For a founder who just wants their business to run, that's one more thing to learn, not a thing that helps.</p>
+      <p>Asah started as a project for the Amazon Nova Hackathon. The idea resonated — with the judges and with us — enough that the team decided not to leave it as a hackathon entry. We chose to keep building it as a real product.</p>
+      <p><strong>Who it's for:</strong> solo founders and small startup teams who don't have business expertise on the team — and who aren't familiar with AI agents either.</p>
+      <p><strong>Constraints:</strong> a hackathon timeline to start, a team of three, and a build on Amazon Nova.</p>
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">02</span>
+      <h2>My <em>role</em></h2>
+    </div>
+    <div class="case-body">
+      <div class="role-tags">
+        <span>Backend</span>
+        <span>RAG architecture</span>
+        <span>Shared design</span>
+        <span>Shared research</span>
+      </div>
+      <p><strong>Team of three.</strong> Design and research were shared — all three of us shaped the concept, the users, and the direction together.</p>
+      <p>On top of that shared work, I owned the <strong>backend and the RAG architecture</strong> that lets Asah's agents pull the right business context into every response — so the manager actually feels like it knows the company it's running. <span class="inline-note">[Kelly: confirm this is right, or replace with how you'd describe what your RAG setup does.]</span></p>
+      <p>On the design side, the line I kept pushing every team decision back to: <em>friendly enough that a first-time AI user isn't intimidated, but never so playful that it stops reading as a serious business tool.</em> A business manager that looks childish loses trust the moment a founder considers handing real work to it. That tension — warm but credible — is the rule the whole interface was tuned against.</p>
+      <p>It's the part of this project I'm most glad to be able to point to: I didn't just help design how Asah should feel — I built the system underneath it.</p>
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">03</span>
+      <h2><em>Research</em></h2>
+    </div>
+    <div class="case-body">
+      <p>We didn't have time for primary research with founders, so we ran a focused secondary-research pass to map the problem space and the competitive landscape before committing to a direction. We looked at:</p>
+      <ul>
+        <li><strong>What running a startup actually requires</strong> — the operational, financial, and managerial workload that isn't "the product."</li>
+        <li><strong>Where founders consistently struggle</strong> — across reports, founder accounts, and post-mortems.</li>
+        <li><strong>Why startups fail</strong> — failure-rate data and the most common reasons cited.</li>
+        <li><strong>The existing tools</strong> — a competitor analysis of AI assistants and business-management tools aimed at small teams.</li>
+      </ul>
+      <p>The findings that shaped the design:</p>
+      <ol class="case-ordered">
+        <li><strong>Most startups fail for reasons that have nothing to do with the idea itself.</strong> Operations, money, and team management show up far more often than a weak product. → That confirmed our focus: take the <em>business</em> side off the founder, not the product side. <span class="inline-note">[Kelly: if there's a specific number or source you remember (e.g. "X% of startups fail because of…"), drop it in.]</span></li>
+        <li><strong>The founders who struggle most don't have a business operator on the team.</strong> Many small startups are technical or design-led, and the business workload lands on whoever has time. → That sharpened our target audience: solo founders and small teams without that expertise.</li>
+        <li><strong>The tools that exist are either fragmented or too technical.</strong> Most assume the user is already fluent in AI agents, prompts, and configuration. → That set the differentiation: not another tool to learn, but a single <em>manager</em> that handles the agents on the user's behalf. <span class="inline-note">[Kelly: if there were 2-3 specific competitors you compared against, name them here — concrete names land harder than "existing tools."]</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">04 ★</span>
+      <h2>Decisions &amp; <em>tradeoffs</em></h2>
+    </div>
+    <div class="case-body is-wide">
+      <div class="decisions">
+
+        <div class="decision">
+          <span class="d-num">01</span>
+          <div>
+            <h3>From hackathon app to web product, with a sharper direction</h3>
+            <p>The version we submitted to the hackathon was a mobile app. After submitting, the team sat with the project and asked an honest question: if this were a real product, would it survive?</p>
+            <p>Two answers came back. First, our target audience wasn't specific enough. Second, the product didn't feel different enough from the AI tools already out there.</p>
+            <p>So we redrew the idea. Instead of "an app with AI features," Asah became an <strong>AI business manager</strong> — positioned like a real employee, not a tool. The user hires other AI agents as workers, and Asah supervises and manages all of them, so the user never has to. That positioning gave us both a clear audience (founders without business expertise) and a clear difference from everything else (a manager, not a feature).</p>
+            <p>We also moved the product to <strong>web-first</strong>. Once the feature set was finalized, the work Asah handles fits a larger screen and a web context better than a phone. (A mobile version is still planned — but web is the home.)</p>
+            <p>The tradeoff: we walked away from a finished hackathon app and committed to a much larger build. We decided a clear, defensible product was worth more than a head start.</p>
+            <div class="artifact-grid">
+              <div class="artifact" role="img" aria-label="Before placeholder for original app Page 1"><span class="caption">Before — original app (Page 1)</span></div>
+              <div class="artifact" role="img" aria-label="After placeholder for New Asah web"><span class="caption">After — New Asah web</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision">
+          <span class="d-num">02</span>
+          <div>
+            <h3>A manager you don't have to manage</h3>
+            <p>The hardest part of "just use AI agents" is usually the user. Agents are powerful, but configuring them, prompting them, and keeping track of them is its own skill — and our users, by definition, don't have it.</p>
+            <p>So we made supervision Asah's job, not the user's. The user hires agents; Asah monitors and coordinates them. The interface is beginner-friendly on purpose: someone who has never touched an AI agent should be able to put quality agents to work without seeing a single line of configuration or code.</p>
+          </div>
+        </div>
+
+        <div class="decision">
+          <span class="d-num">03</span>
+          <div>
+            <h3>Agents as characters</h3>
+            <p>If we described an AI agent the way it actually is — a prompt, a tool list, a configuration — most of our users wouldn't know what to do with it. They aren't AI users. They're founders.</p>
+            <p>So we treated each agent as a <em>character</em>: a name, a role, a personality, traits you can read at a glance. The thing under the hood is still an AI agent; the thing the user sees is closer to a teammate they can size up in two seconds. Characters carry meaning faster than prompts do — and for a product whose whole pitch is "you don't need to be technical to use this," that mattered more than realism.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">05</span>
+      <h2>The <em>design</em></h2>
+    </div>
+    <div class="case-body is-wide">
+      <h3 class="case-subhead">5a · Process</h3>
+      <div class="artifact-grid">
+        <div class="artifact" role="img" aria-label="Process artifact placeholder for wireframes or sketches"><span class="caption">Process artifact placeholder</span></div>
+        <div class="artifact" role="img" aria-label="Process artifact placeholder for IA or agent model"><span class="caption">IA / agent model placeholder</span></div>
+        <div class="artifact artifact-wide" role="img" aria-label="Process artifact placeholder for before and after flow"><span class="caption">Before / after flow placeholder</span></div>
+      </div>
+
+      <h3 class="case-subhead is-spaced">5b · Final solution</h3>
+      <div class="screen-walkthrough">
+        <div class="screen">
+          <div class="screen-frame" role="img" aria-label="Manage Team screen placeholder">Manage Team screen placeholder</div>
+          <div class="screen-caption">
+            <p class="num">01 / Manage Team</p>
+            <h4>Replace with final screen export</h4>
+            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+          </div>
+        </div>
+        <div class="screen">
+          <div class="screen-frame" role="img" aria-label="Office screen placeholder">Office screen placeholder</div>
+          <div class="screen-caption">
+            <p class="num">02 / Office</p>
+            <h4>Replace with final screen export</h4>
+            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+          </div>
+        </div>
+        <div class="screen">
+          <div class="screen-frame" role="img" aria-label="Calendar and Power Up screen placeholder">Calendar / Power Up screen placeholder</div>
+          <div class="screen-caption">
+            <p class="num">03 / Calendar &amp; Power Up</p>
+            <h4>Replace with final screen export</h4>
+            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+          </div>
+        </div>
+        <div class="screen">
+          <div class="screen-frame" role="img" aria-label="Dashboard screen placeholder">Dashboard screen placeholder</div>
+          <div class="screen-caption">
+            <p class="num">04 / Dashboard</p>
+            <h4>Replace with final screen export</h4>
+            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">06</span>
+      <h2><em>Outcome</em></h2>
+    </div>
+    <div class="case-body">
+      <p>The hackathon didn't end in a prize. The signal that mattered came from the design itself: the <strong>beginner-friendly UI</strong> — the part we'd been least sure about — turned out to be the part that kept working. It's what told us Asah was worth continuing past the hackathon, and it's the thread the current web version is built around.</p>
+      <p>Asah isn't finished yet, so we haven't put it in front of users formally. But friends we showed it to along the way came back with the same three things, unprompted: <em>it's well built, the idea is good, it's beginner-friendly.</em> The last one is the one we'd been most uncertain about — the fact that it kept surfacing without us asking told us the design was carrying its weight.</p>
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">07</span>
+      <h2><em>Reflection</em></h2>
+    </div>
+    <div class="case-body">
+      <p><strong>What went well.</strong> The pivot. Sitting with the project after the hackathon and being willing to say "the audience isn't clear enough, and we don't look different enough" took Asah from a hackathon entry to a real product direction. The beginner-friendly UI followed from that clarity, not the other way around.</p>
+      <p><strong>What was hardest.</strong> Connecting the backend to the frontend. This was my first time doing backend at all — getting the API keys set up, building the RAG architecture from scratch, and getting Amazon Nova to actually return the right kind of response were all new to me, and the seams between systems were where the hard parts lived. I leaned on AI-assisted coding heavily, but the design of what to ask for, and the responsibility for whether the answer was right, was mine.</p>
+      <p><strong>What I'd do differently.</strong> The Office space — where the user sees their hired agents — works, but it could feel more like an actual 2D office. I'd push the characters further: have them visibly <em>doing</em> the work, not just standing there. The metaphor we chose was the right one; I'd just commit to it harder.</p>
+      <p><strong>What's next.</strong> Finishing the idea and finishing the backend, so Asah works end to end and not just on the design side. The web version is the home; the mobile version comes after.</p>
+    </div>
+  </section>
+
+  <section class="wrap case-next">
+    <a href="../health-u/">
+      <div>
+        <p class="next-label">Next case →</p>
+        <h2>Health U</h2>
+        <p class="next-desc">Healthcare in one place — so the patient stops being the admin.</p>
+      </div>
+      <div class="next-thumb" role="img" aria-label="Health U placeholder thumbnail"></div>
+    </a>
+  </section>
+
+</main>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
