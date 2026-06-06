@@ -38,9 +38,10 @@
     <h1>Scrim</h1>
     <p class="tagline">An app for the things you'd do — if you weren't doing them alone.</p>
 
-    <div class="case-hero-visual placeholder-visual" role="img" aria-label="Placeholder for lead screen — home/discover, or onboarding's strongest frame">
-      <span class="visual-label">Hero visual placeholder · home/discover or onboarding</span>
-    </div>
+    <figure class="case-hero-visual case-image-figure">
+      <img src="../assets/images/scrim/scrim-hero.png" alt="The first thing you see is people to play with — the payoff, before any setup." style="width:100%;height:auto">
+      <figcaption class="case-figure-caption">The first thing you see is people to play with — the payoff, before any setup.</figcaption>
+    </figure>
 
     <dl class="case-meta-strip">
       <div><dt>Type</dt><dd>Mobile app</dd></div>
@@ -135,6 +136,16 @@
             <p>In a <em>meeting</em> app, trust isn't a feature you bolt on. It's the thing the user is checking, consciously or not, every time they open the screen. That carried into two layers.</p>
             <p><strong>Visually:</strong> people who use a meeting app need to trust it; people who use an activity app need it to feel alive. Most defaults break one of those. Lean too bright and too colorful, and the app starts reading scam-y — and the moment a meeting app looks unserious, the people you most want using it (the cautious ones, like Jessica) close it. Go too muted and it reads inert, the opposite of what a "go be active" product is supposed to feel like. I tuned the visual system right at that line: enough color and motion to read energetic, restrained enough to read credible. That tension — <em>warm but trustworthy</em> — is the same line I'd designed against in <a href="../asah/">Asah</a> and <a href="../health-u/">Health U</a>. Across three products in three different domains, the same rule kept mattering.</p>
             <p><strong>Structurally:</strong> verified profiles, post-activity ratings, in-app reporting. Trust signals built into the architecture, not parked on a settings screen. The reason is Jessica: when a 20-year-old decides whether to show up to an event with strangers, the answer needs to be visible in the flow, not assumed.</p>
+            <div class="artifact-grid">
+              <figure class="artifact">
+                <img src="../assets/images/scrim/scrim-manage-participants.png" alt="Safety built into the flow — a host can remove anyone." style="width:100%;height:auto">
+                <figcaption class="case-figure-caption">Safety built into the flow — a host can remove anyone.</figcaption>
+              </figure>
+              <figure class="artifact">
+                <img src="../assets/images/scrim/scrim-profile.png" alt="Reputation you can read, plus report and block where the user actually is." style="width:100%;height:auto">
+                <figcaption class="case-figure-caption">Reputation you can read, plus report and block where the user actually is.</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
 
@@ -161,6 +172,16 @@
               <li><strong>Connect</strong> — chat and confirm plans.</li>
             </ol>
             <p>The architecture's whole job is to keep the user moving forward through that arc. No screen exists that doesn't move them one step further. The tradeoff: some features (filters, map view, saved activities) had to be earned into the flow rather than parked on a navigation bar — they only show up when the user is at the step where they're useful.</p>
+            <div class="artifact-grid">
+              <figure class="artifact">
+                <img src="../assets/images/scrim/scrim-explore-list.png" alt="Filters and list appear at the step they're useful, not parked on a nav bar." style="width:100%;height:auto">
+                <figcaption class="case-figure-caption">Filters and list appear at the step they're useful, not parked on a nav bar.</figcaption>
+              </figure>
+              <figure class="artifact">
+                <img src="../assets/images/scrim/scrim-explore-map.png" alt="Same screen, map view — nearby games where they actually are." style="width:100%;height:auto">
+                <figcaption class="case-figure-caption">Same screen, map view — nearby games where they actually are.</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
@@ -174,56 +195,97 @@
     </div>
     <div class="case-body is-wide">
       <h3 class="case-subhead">5a · Process</h3>
-      <p class="placeholder">[Kelly: 1-2 process artifacts — the IA map is the strongest single artifact you have for this case since you owned it. The persona spread (Jessica / Eric / Rosie) from the midterm deck is also strong as research evidence.]</p>
       <div class="artifact-grid">
-        <div class="artifact" role="img" aria-label="Scrim IA map placeholder"><span class="caption">IA map placeholder</span></div>
-        <div class="artifact" role="img" aria-label="Scrim persona spread placeholder"><span class="caption">Persona spread placeholder</span></div>
+        <figure class="artifact">
+          <img src="../assets/images/scrim/scrim-ia-map.png" alt="Onboarding → Dashboard → Match → Connect — the architecture keeps the user moving forward." style="width:100%;height:auto">
+          <figcaption class="case-figure-caption">Onboarding → Dashboard → Match → Connect — the architecture keeps the user moving forward.</figcaption>
+        </figure>
+        <figure class="artifact">
+          <img src="../assets/images/scrim/scrim-personas.png" alt="The three people every screen was tested against — all three named trust and effort first." style="width:100%;height:auto">
+          <figcaption class="case-figure-caption">The three people every screen was tested against — all three named trust and effort first.</figcaption>
+        </figure>
       </div>
 
       <h3 class="case-subhead is-spaced">5b · Final solution</h3>
-      <p class="case-note">Screens to walk through (export from Figma → Scrim Wireframe page, plus final-presentation file):</p>
-      <ul>
-        <li><strong>Onboarding</strong> — three steps, no friction. The doorway.</li>
-        <li><strong>Home / Discover</strong> — nearby activities, list and map view. The dashboard.</li>
-        <li><strong>Event Detail</strong> — what, where, when, who. The decision surface.</li>
-        <li><strong>Participants</strong> — who you'd be meeting. The trust surface.</li>
-        <li><strong>Chat</strong> — the connection layer that turns "an event" into "an evening."</li>
-        <li><strong>Profile</strong> — how people present themselves; how others read them.</li>
-        <li><strong>Event Creation</strong> — designed so first-time hosts aren't intimidated by hosting.</li>
-      </ul>
-      <p class="placeholder">[Kelly: caption each screen with the <em>problem it solves</em>, not the feature name. "Event detail tells the user whether to show up" is stronger than "Event detail screen."]</p>
-
       <div class="screen-walkthrough">
         <div class="screen">
-          <div class="screen-frame" role="img" aria-label="Scrim onboarding screen placeholder">Onboarding screen placeholder</div>
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-onboarding-1.png" alt="Onboarding asks a few quick taps, not a form — interests first, the rest later." style="width:100%;height:auto">
+          </figure>
           <div class="screen-caption">
             <p class="num">01 / Onboarding</p>
-            <h4>Replace with final screen export</h4>
-            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+            <h4>Onboarding</h4>
+            <p>Onboarding asks a few quick taps, not a form — interests first, the rest later.</p>
           </div>
         </div>
         <div class="screen">
-          <div class="screen-frame" role="img" aria-label="Scrim Home Discover screen placeholder">Home / Discover screen placeholder</div>
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-onboarding-2.png" alt="One more multi-select — goals — then Get Started." style="width:100%;height:auto">
+          </figure>
           <div class="screen-caption">
-            <p class="num">02 / Home / Discover</p>
-            <h4>Replace with final screen export</h4>
-            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+            <p class="num">02 / Onboarding Goals</p>
+            <h4>Onboarding Goals</h4>
+            <p>One more multi-select — goals — then Get Started.</p>
           </div>
         </div>
         <div class="screen">
-          <div class="screen-frame" role="img" aria-label="Scrim event detail screen placeholder">Event Detail screen placeholder</div>
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-home-discover.png" alt="Nearby games and the people in them — list and map." style="width:100%;height:auto">
+          </figure>
           <div class="screen-caption">
-            <p class="num">03 / Event Detail</p>
-            <h4>Replace with final screen export</h4>
-            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+            <p class="num">03 / Home / Discover</p>
+            <h4>Home / Discover</h4>
+            <p>Nearby games and the people in them — list and map.</p>
           </div>
         </div>
         <div class="screen">
-          <div class="screen-frame" role="img" aria-label="Scrim event creation screen placeholder">Event Creation screen placeholder</div>
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-event-detail.png" alt="The decision surface — what, where, when, who, before you commit." style="width:100%;height:auto">
+          </figure>
           <div class="screen-caption">
-            <p class="num">04 / Event Creation</p>
-            <h4>Replace with final screen export</h4>
-            <p class="placeholder">[Kelly: caption this screen with the problem it solves.]</p>
+            <p class="num">04 / Event Detail</p>
+            <h4>Event Detail</h4>
+            <p>The decision surface — what, where, when, who, before you commit.</p>
+          </div>
+        </div>
+        <div class="screen">
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-participants.png" alt="Who you'd be meeting — the trust surface." style="width:100%;height:auto">
+          </figure>
+          <div class="screen-caption">
+            <p class="num">05 / Participants</p>
+            <h4>Participants</h4>
+            <p>Who you'd be meeting — the trust surface.</p>
+          </div>
+        </div>
+        <div class="screen">
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-chat.png" alt="The connection layer that turns &quot;an event&quot; into &quot;see you there.&quot;" style="width:100%;height:auto">
+          </figure>
+          <div class="screen-caption">
+            <p class="num">06 / Chat</p>
+            <h4>Chat</h4>
+            <p>The connection layer that turns "an event" into "see you there."</p>
+          </div>
+        </div>
+        <div class="screen">
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-create-event.png" alt="Designed so a first-time host sees a few fields, not a form to dread." style="width:100%;height:auto">
+          </figure>
+          <div class="screen-caption">
+            <p class="num">07 / Event Creation</p>
+            <h4>Event Creation</h4>
+            <p>Designed so a first-time host sees a few fields, not a form to dread.</p>
+          </div>
+        </div>
+        <div class="screen">
+          <figure class="screen-frame case-screen-figure">
+            <img src="../assets/images/scrim/scrim-event-created.png" alt="The loop closes — your event is live and discoverable." style="width:100%;height:auto">
+          </figure>
+          <div class="screen-caption">
+            <p class="num">08 / Event Created</p>
+            <h4>Event Created</h4>
+            <p>The loop closes — your event is live and discoverable.</p>
           </div>
         </div>
       </div>
@@ -238,6 +300,16 @@
     <div class="case-body">
       <p>A first round of user testing ran at midterm, with one participant. <span class="inline-note">[Kelly: one sentence on what came out of that session — anything the user surfaced that you changed because of it? And if there was a second testing round between midterm and final, drop a sentence on that too.]</span></p>
       <p><span class="inline-note">[Kelly: when the final critique closes this week, add one or two lines on the response — professor feedback, class read, anything you'd want a reviewer to see.]</span></p>
+      <div class="artifact-grid">
+        <figure class="artifact">
+          <img src="../assets/images/scrim/scrim-event-detail.png" alt="Before: the join state the testers said was too quiet." style="width:100%;height:auto">
+          <figcaption class="case-figure-caption">Before: the join state the testers said was too quiet.</figcaption>
+        </figure>
+        <figure class="artifact">
+          <img src="../assets/images/scrim/scrim-event-joined.png" alt="After: an unmistakable yes — Joined, with Participants and Chat unlocked." style="width:100%;height:auto">
+          <figcaption class="case-figure-caption">After: an unmistakable yes — Joined, with Participants and Chat unlocked.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -260,7 +332,6 @@
         <h2>Selected Work</h2>
         <p class="next-desc">Return to the full project index.</p>
       </div>
-      <div class="next-thumb tone-vermilion" role="img" aria-label="Selected work placeholder thumbnail"></div>
     </a>
   </section>
 

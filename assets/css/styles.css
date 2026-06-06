@@ -1089,6 +1089,30 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
   color: var(--vermilion);
   margin-bottom: 10px;
 }
+figure.case-hero-visual,
+figure.artifact,
+.case-screen-figure {
+  aspect-ratio: auto;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+}
+.case-image-figure img,
+figure.artifact img,
+.case-screen-figure img {
+  width: 100%;
+  height: auto;
+}
+.case-figure-caption {
+  border-top: 1px solid var(--grid);
+  padding: 12px 14px 14px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-soft);
+}
 
 /* ---------- next-project nav ---------- */
 .case-next {
@@ -1265,6 +1289,7 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
   .hero-mark { height: 92px; }
   .row-meta { gap: 8px; flex-wrap: wrap; }
   .case-hero-visual { aspect-ratio: 4 / 5; padding: 14px; }
+  figure.case-hero-visual { aspect-ratio: auto; padding: 0; }
   .visual-label { left: 14px; right: 14px; }
   .contact h2 { font-size: clamp(40px, 12vw, 64px); }
 }
