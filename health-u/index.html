@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Health U — Seunghee (Kelly) Chu</title>
 <meta name="description" content="Health U · AI health assistant. A case study by Seunghee (Kelly) Chu.">
+<meta name="theme-color" content="#FAF6EC">
+<link rel="canonical" href="https://chuseungh2.github.io/portfolio/health-u/">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Health U — Seunghee (Kelly) Chu">
+<meta property="og:description" content="Health U · AI health assistant. A case study by Seunghee (Kelly) Chu.">
+<meta property="og:url" content="https://chuseungh2.github.io/portfolio/health-u/">
+<meta property="og:image" content="https://chuseungh2.github.io/portfolio/assets/images/health-u/healthu-dashboard.png">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +23,17 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-mark" href="../index.html#work">
       <span class="back">← Back to work</span>Seunghee Chu
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav-links">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-links">
+    <div class="nav-links" id="site-nav-links">
       <a href="../index.html#work">Work</a>
       <a href="../index.html#about">About</a>
       <a href="../index.html#playground">Playground</a>
@@ -31,7 +42,7 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
 
   <section class="wrap case-hero">
     <p class="case-eyebrow">Case 02 / Mobile app</p>
@@ -39,7 +50,7 @@
     <p class="tagline">Managing a chronic illness shouldn't feel like a full-time job.</p>
 
     <figure class="case-hero-visual case-image-figure">
-      <img src="../assets/images/health-u/healthu-dashboard.png" alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms." style="width:100%;height:auto">
+      <img width="786" height="1704" fetchpriority="high" decoding="async" src="../assets/images/health-u/healthu-dashboard.png" alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms." style="width:100%;height:auto">
       <figcaption class="case-figure-caption">The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms.</figcaption>
     </figure>
 
@@ -140,12 +151,15 @@
             <h3>Reduce, don't bury</h3>
             <p>Chronic illness management actually needs detail: dosages, timings, conditions, history. The temptation is to ship that detail flat, on every screen, "just in case." That would have buried the user.</p>
             <p>The principle I held the design to: <em>show the right detail at the right moment, and let the AI assistant remember everything else.</em> The assistant autofills repetitive information — medications, doctors, appointment specifics — so the user spends less effort entering data they already gave once. The tradeoff is real: simplicity has to coexist with the depth chronic illness actually requires. The AI does most of that depth-holding off-screen.</p>
+            <!-- [Kelly: healthu-appointment-autofill.png is not exported yet (Figma 314:1560, see codex-image-handoff.md).
+                 Drop the PNG into assets/images/health-u/ and restore this figure:
             <div class="artifact-grid">
               <figure class="artifact">
                 <img src="../assets/images/health-u/healthu-appointment-autofill.png" alt="The assistant pre-fills the doctor and &quot;Covered by Insurance&quot; — depth held off-screen, not retyped." style="width:100%;height:auto">
                 <figcaption class="case-figure-caption">The assistant pre-fills the doctor and "Covered by Insurance" — depth held off-screen, not retyped.</figcaption>
               </figure>
             </div>
+            -->
           </div>
         </div>
 
@@ -157,7 +171,7 @@
             <p>So the design walks a line: warm visual system, plain conversational language from the assistant, no cute mascots. The AI is helpful, not chipper.</p>
             <div class="artifact-grid">
               <figure class="artifact">
-                <img src="../assets/images/health-u/healthu-ai-assistant.png" alt="It notices the headache you logged and opens the conversation — the remembering is the app's job." style="width:100%;height:auto">
+                <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-ai-assistant.png" alt="It notices the headache you logged and opens the conversation — the remembering is the app's job." style="width:100%;height:auto">
                 <figcaption class="case-figure-caption">It notices the headache you logged and opens the conversation — the remembering is the app's job.</figcaption>
               </figure>
             </div>
@@ -192,7 +206,7 @@
 
       <div class="artifact-grid">
         <figure class="artifact">
-          <img src="../assets/images/health-u/healthu-persona.png" alt="The one person the whole app was designed against — a full-time job, a real condition, no patience for another app." style="width:100%;height:auto">
+          <img width="3840" height="2160" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-persona.png" alt="The one person the whole app was designed against — a full-time job, a real condition, no patience for another app." style="width:100%;height:auto">
           <figcaption class="case-figure-caption">The one person the whole app was designed against — a full-time job, a real condition, no patience for another app.</figcaption>
         </figure>
       </div>
@@ -210,7 +224,7 @@
       <div class="screen-walkthrough">
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/health-u/healthu-dashboard.png" alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms." style="width:100%;height:auto">
+            <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-dashboard.png" alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">01 / Dashboard</p>
@@ -220,7 +234,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/health-u/healthu-ai-assistant.png" alt="It notices the headache you logged and opens the conversation — the remembering is the app's job." style="width:100%;height:auto">
+            <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-ai-assistant.png" alt="It notices the headache you logged and opens the conversation — the remembering is the app's job." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">02 / AI Health Assistant</p>
@@ -230,7 +244,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/health-u/healthu-medication.png" alt="Doses and reminders in one view, so a missed dose isn't one more thing to track." style="width:100%;height:auto">
+            <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-medication.png" alt="Doses and reminders in one view, so a missed dose isn't one more thing to track." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">03 / Medication Management</p>
@@ -240,7 +254,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/health-u/healthu-symptom.png" alt="Logging a symptom in a sentence — the invisible made visible, with severity in one tap." style="width:100%;height:auto">
+            <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-symptom.png" alt="Logging a symptom in a sentence — the invisible made visible, with severity in one tap." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">04 / Symptom Tracking</p>
@@ -250,7 +264,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/health-u/healthu-appointment.png" alt="Book in a couple of taps — the assistant carries the doctor and insurance details forward." style="width:100%;height:auto">
+            <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-appointment.png" alt="Book in a couple of taps — the assistant carries the doctor and insurance details forward." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">05 / Appointment Scheduling</p>
@@ -260,7 +274,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/health-u/healthu-past-results.png" alt="History you can actually read — CBC, Vitamin D, A1C, flagged when something needs a look." style="width:100%;height:auto">
+            <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-past-results.png" alt="History you can actually read — CBC, Vitamin D, A1C, flagged when something needs a look." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">06 / Past Results</p>

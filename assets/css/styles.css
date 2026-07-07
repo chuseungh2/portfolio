@@ -67,6 +67,22 @@ em { font-style: italic; }
   color: var(--stone);
 }
 
+/* skip link — visually hidden until keyboard focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10001;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+}
+.skip-link:focus { left: 0; }
+
 /* ---------- grain overlay (전역) ---------- */
 body::before {
   content: "";
@@ -1333,6 +1349,7 @@ figure.artifact img,
 
 /* respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;

@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scrim — Seunghee (Kelly) Chu</title>
 <meta name="description" content="Scrim · social activity app. A case study by Seunghee (Kelly) Chu.">
+<meta name="theme-color" content="#FAF6EC">
+<link rel="canonical" href="https://chuseungh2.github.io/portfolio/scrim/">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scrim — Seunghee (Kelly) Chu">
+<meta property="og:description" content="Scrim · social activity app. A case study by Seunghee (Kelly) Chu.">
+<meta property="og:url" content="https://chuseungh2.github.io/portfolio/scrim/">
+<meta property="og:image" content="https://chuseungh2.github.io/portfolio/assets/images/scrim/scrim-home-discover.png">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +23,17 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-mark" href="../index.html#work">
       <span class="back">← Back to work</span>Seunghee Chu
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav-links">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-links">
+    <div class="nav-links" id="site-nav-links">
       <a href="../index.html#work">Work</a>
       <a href="../index.html#about">About</a>
       <a href="../index.html#playground">Playground</a>
@@ -31,7 +42,7 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
 
   <section class="wrap case-hero">
     <p class="case-eyebrow">Case 03 / Mobile app</p>
@@ -39,7 +50,7 @@
     <p class="tagline">An app for the things you'd do — if you weren't doing them alone.</p>
 
     <figure class="case-hero-visual case-image-figure">
-      <img src="../assets/images/scrim/scrim-home-discover.png" alt="The first thing you see is people to play with — the payoff, before any setup." style="width:100%;height:auto">
+      <img width="780" height="2062" fetchpriority="high" decoding="async" src="../assets/images/scrim/scrim-home-discover.png" alt="The first thing you see is people to play with — the payoff, before any setup." style="width:100%;height:auto">
       <figcaption class="case-figure-caption">The first thing you see is people to play with — the payoff, before any setup.</figcaption>
     </figure>
 
@@ -151,11 +162,11 @@
             <p><strong>Structurally:</strong> verified profiles, post-activity ratings, in-app reporting. Trust signals built into the architecture, not parked on a settings screen. The reason is Jessica: when a 20-year-old decides whether to show up to an event with strangers, the answer needs to be visible in the flow, not assumed.</p>
             <div class="artifact-grid">
               <figure class="artifact">
-                <img src="../assets/images/scrim/scrim-manage-participants.png" alt="Safety built into the flow — a host can remove anyone." style="width:100%;height:auto">
+                <img width="780" height="1688" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-manage-participants.png" alt="Safety built into the flow — a host can remove anyone." style="width:100%;height:auto">
                 <figcaption class="case-figure-caption">Safety built into the flow — a host can remove anyone.</figcaption>
               </figure>
               <figure class="artifact">
-                <img src="../assets/images/scrim/scrim-profile.png" alt="Reputation you can read, plus report and block where the user actually is." style="width:100%;height:auto">
+                <img width="780" height="2474" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-profile.png" alt="Reputation you can read, plus report and block where the user actually is." style="width:100%;height:auto">
                 <figcaption class="case-figure-caption">Reputation you can read, plus report and block where the user actually is.</figcaption>
               </figure>
             </div>
@@ -187,11 +198,11 @@
             <p>The architecture's whole job is to keep the user moving forward through that arc. No screen exists that doesn't move them one step further. The tradeoff: some features (filters, map view, saved activities) had to be earned into the flow rather than parked on a navigation bar — they only show up when the user is at the step where they're useful.</p>
             <div class="artifact-grid">
               <figure class="artifact">
-                <img src="../assets/images/scrim/scrim-explore-list.png" alt="Filters and list appear at the step they're useful, not parked on a nav bar." style="width:100%;height:auto">
+                <img width="780" height="1688" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-explore-list.png" alt="Filters and list appear at the step they're useful, not parked on a nav bar." style="width:100%;height:auto">
                 <figcaption class="case-figure-caption">Filters and list appear at the step they're useful, not parked on a nav bar.</figcaption>
               </figure>
               <figure class="artifact">
-                <img src="../assets/images/scrim/scrim-explore-map.png" alt="Same screen, map view — nearby games where they actually are." style="width:100%;height:auto">
+                <img width="780" height="1688" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-explore-map.png" alt="Same screen, map view — nearby games where they actually are." style="width:100%;height:auto">
                 <figcaption class="case-figure-caption">Same screen, map view — nearby games where they actually are.</figcaption>
               </figure>
             </div>
@@ -210,17 +221,20 @@
       <h3 class="case-subhead">5a · Process</h3>
       <div class="artifact-grid">
         <figure class="artifact">
-          <img src="../assets/images/scrim/scrim-ia-map.png" alt="Onboarding → Dashboard → Match → Connect — the architecture keeps the user moving forward." style="width:100%;height:auto">
+          <img width="5592" height="3392" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-ia-map.png" alt="Onboarding → Dashboard → Match → Connect — the architecture keeps the user moving forward." style="width:100%;height:auto">
           <figcaption class="case-figure-caption">Onboarding → Dashboard → Match → Connect — the architecture keeps the user moving forward.</figcaption>
         </figure>
         <figure class="artifact">
-          <img src="../assets/images/scrim/scrim-personas.png" alt="The three people every screen was tested against — all three named trust and effort first." style="width:100%;height:auto">
+          <img width="11520" height="2160" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-personas.png" alt="The three people every screen was tested against — all three named trust and effort first." style="width:100%;height:auto">
           <figcaption class="case-figure-caption">The three people every screen was tested against — all three named trust and effort first.</figcaption>
         </figure>
       </div>
 
       <h3 class="case-subhead is-spaced">5b · Final solution</h3>
       <div class="screen-walkthrough">
+        <!-- [Kelly: scrim-onboarding-1.png and scrim-onboarding-2.png are not exported yet
+             (Figma 548:790 and 548:1092, see codex-image-handoff.md).
+             Drop the PNGs into assets/images/scrim/ and restore these two screens:
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
             <img src="../assets/images/scrim/scrim-onboarding-1.png" alt="Onboarding asks a few quick taps, not a form — interests first, the rest later." style="width:100%;height:auto">
@@ -241,9 +255,10 @@
             <p>One more multi-select — goals — then Get Started.</p>
           </div>
         </div>
+        -->
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/scrim/scrim-home-discover.png" alt="Nearby games and the people in them — list and map." style="width:100%;height:auto">
+            <img width="780" height="2062" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-home-discover.png" alt="Nearby games and the people in them — list and map." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">03 / Home / Discover</p>
@@ -253,7 +268,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/scrim/scrim-event-detail.png" alt="The decision surface — what, where, when, who, before you commit." style="width:100%;height:auto">
+            <img width="932" height="1840" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-event-detail.png" alt="The decision surface — what, where, when, who, before you commit." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">04 / Event Detail</p>
@@ -263,7 +278,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/scrim/scrim-participants.png" alt="Who you'd be meeting — the trust surface." style="width:100%;height:auto">
+            <img width="932" height="2190" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-participants.png" alt="Who you'd be meeting — the trust surface." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">05 / Participants</p>
@@ -273,7 +288,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/scrim/scrim-chat.png" alt="The connection layer that turns &quot;an event&quot; into &quot;see you there.&quot;" style="width:100%;height:auto">
+            <img width="780" height="1688" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-chat.png" alt="The connection layer that turns &quot;an event&quot; into &quot;see you there.&quot;" style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">06 / Chat</p>
@@ -283,7 +298,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/scrim/scrim-create-event.png" alt="Designed so a first-time host sees a few fields, not a form to dread." style="width:100%;height:auto">
+            <img width="780" height="1688" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-create-event.png" alt="Designed so a first-time host sees a few fields, not a form to dread." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">07 / Event Creation</p>
@@ -293,7 +308,7 @@
         </div>
         <div class="screen">
           <figure class="screen-frame case-screen-figure">
-            <img src="../assets/images/scrim/scrim-event-created.png" alt="The loop closes — your event is live and discoverable." style="width:100%;height:auto">
+            <img width="780" height="1688" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-event-created.png" alt="The loop closes — your event is live and discoverable." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
             <p class="num">08 / Event Created</p>
@@ -315,11 +330,11 @@
       <p><span class="inline-note">[Kelly: was there a second testing round between midterm and final — and if so, what came out of it? And how did the final critique go — professor feedback, class read, anything worth a reviewer seeing? Fill in what actually happened; drop this note if the answer is "nothing further to add."]</span></p>
       <div class="artifact-grid">
         <figure class="artifact">
-          <img src="../assets/images/scrim/scrim-event-detail.png" alt="Before: the join state the testers said was too quiet." style="width:100%;height:auto">
+          <img width="932" height="1840" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-event-detail.png" alt="Before: the join state the testers said was too quiet." style="width:100%;height:auto">
           <figcaption class="case-figure-caption">Before: the join state the testers said was too quiet.</figcaption>
         </figure>
         <figure class="artifact">
-          <img src="../assets/images/scrim/scrim-event-joined.png" alt="After: an unmistakable yes — Joined, with Participants and Chat unlocked." style="width:100%;height:auto">
+          <img width="932" height="1902" loading="lazy" decoding="async" src="../assets/images/scrim/scrim-event-joined.png" alt="After: an unmistakable yes — Joined, with Participants and Chat unlocked." style="width:100%;height:auto">
           <figcaption class="case-figure-caption">After: an unmistakable yes — Joined, with Participants and Chat unlocked.</figcaption>
         </figure>
       </div>

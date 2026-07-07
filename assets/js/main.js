@@ -7,6 +7,7 @@
 
   /* ---------- ink cursor (desktop only) ---------- */
   const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (supportsHover) {
     const cursor = document.createElement('div');
@@ -23,7 +24,7 @@
       cursor.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
 
       const now = performance.now();
-      if (now - lastTrailTime > TRAIL_INTERVAL && Math.random() > 0.4) {
+      if (!prefersReducedMotion && now - lastTrailTime > TRAIL_INTERVAL && Math.random() > 0.4) {
         lastTrailTime = now;
         spawnTrail(mx, my);
       }
@@ -124,7 +125,7 @@
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
     });
   });
 
