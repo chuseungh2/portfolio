@@ -2,12 +2,16 @@
 
 Things left for Kelly to fill in across the case-study pages. These exist in the HTML too, as
 `<span class="inline-note">[Kelly: ...]</span>` right next to where they belong — that markup is
-hidden on the live site (`.inline-note { display: none; }` in `assets/css/base.css`), so it's
+hidden on the live site (`.inline-note { display: none; }` in `assets/css/styles.css`), so it's
 easy to forget it's there. This file is the visible index so nothing gets lost in view-source.
 
-> Heads up: an earlier CSS bug briefly made these notes **visible on the live site** (a duplicate
-> `.inline-note` rule was accidentally winning the cascade). It's fixed now, but it's why this
-> file exists as a second, always-visible place to track them.
+> **This was a real live-site bug, now fixed.** `styles.css` had **two** `.inline-note` rules at
+> equal specificity — `display: none` near the top and `display: inline` further down — and the
+> later one won the cascade. All **12** notes were therefore visible to anyone who opened the
+> site: 3 on the home page, 7 on Asah, 2 on Scrim. They are now consolidated into a single rule.
+> If you ever want to see them while drafting, flip that one rule to `display: inline`.
+
+Current count: **12 notes** — home 3 · asah 7 · health-u 0 · scrim 2.
 
 ## asah/ — Goal section added, needs review
 
@@ -25,11 +29,28 @@ success bar from existing copy. **Please read it and confirm it's actually right
   measurable success bar once Asah has actual usage (activation rate, retention, etc.) instead of
   the qualitative bar it has today.
 
-## Known broken images (all pre-existing, not caused by any of this session's work)
+## ⭐ Next thing to do: drop in the hackathon-version screenshot
 
-- `asah/index.html:143` → `assets/images/asah/asah-old-home.png` — 404. This is the "before" half
-  of the Decision 01 before/after comparison (old mentor screen vs. new manager screen). Right now
-  visitors see one broken image next to the "after" shot.
+**Save it as exactly `assets/images/asah/asah-old-home.png`**, then open
+`asah/index.html`, find the `TODO(Kelly)` comment inside Decision 01, and delete the two
+comment lines wrapping the `<div class="artifact-grid">` block (plus the `.inline-note`
+paragraph right after it). That restores the before/after comparison.
+
+Why it was commented out: that file has **never existed in this repo** — not in any commit.
+The markup was written expecting it, so the live site was rendering a broken image next to the
+"after" shot. Commenting it out is temporary; the comparison is worth having, since Decision 01
+is entirely an argument about changing direction, and a pivot lands much harder when you can see
+both directions side by side. It's also the only place in the whole portfolio that shows a
+version you *abandoned*, which reads as more mature than a wall of finished screens.
+
+One thing to decide when you restore it: the "after" image is `asah-hero.png`, the same image
+already used as the case hero at the top of the page. In a labeled before/after pair that repeat
+is arguably fine — it anchors "the screen you saw up top is the result of this decision" — but if
+you'd rather not repeat it, swap in a different screen and adjust the caption (currently
+"same greeting, but it answers as someone you can talk to", which assumes a same-screen comparison).
+
+## Other known broken images (all pre-existing)
+
 - `health-u/index.html:133` → `assets/images/health-u/healthu-appointment-autofill.png` — 404.
 - `scrim/index.html:215,225` → `assets/images/scrim/scrim-onboarding-1.png` and `-2.png` — 404 (two images).
 

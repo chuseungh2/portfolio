@@ -3,10 +3,6 @@
    Visual system from moodboard.html (Editorial × Alive)
    ========================================================= */
 
-/* Hide [Kelly: ...] inline-note placeholders in production. They stay in the
-   HTML source so they can be found and filled in later via view-source. */
-.inline-note { display: none; }
-
 :root {
   /* color */
   --paper:        #FAF6EC;
@@ -56,8 +52,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 strong { color: var(--ink); font-weight: 600; }
 em { font-style: italic; }
+/* [Kelly: ...] placeholders. Hidden in production but kept in the HTML source,
+   so they can be found via view-source (and listed in CASE-STUDY-TODO.md).
+   There must be only ONE .inline-note rule: a second one further down the file
+   previously re-set display:inline at equal specificity and won, which is why
+   these notes were visible on the live site. Flip to `inline` to draft. */
 .inline-note {
-  display: inline;
+  display: none;
   font-family: var(--mono);
   font-size: .72em;
   line-height: 1.4;
