@@ -1,0 +1,148 @@
+/* =========================================================
+   Seunghee (Kelly) Chu — Portfolio
+   Design tokens: raw palette, semantic roles, and scales.
+
+   Layer 1 (raw) below are first-class names, not deprecated —
+   most existing components are authored directly against them.
+   Layer 2 (semantic) is what new work (dark bands, Phase 3+)
+   should read instead, so it inherits inversion for free.
+   ========================================================= */
+
+:root {
+  /* ---------- layer 1 — raw palette ---------- */
+  --paper:        #FAF6EC;
+  --paper-warm:   #EFE7D6;
+  --clay:         #E4D8C2;   /* third warm step — raised plates, sunken surfaces */
+  --ink:          #161616;
+  --ink-rich:     #14110D;   /* warm near-black, for full-bleed dark bands */
+  --ink-soft:     #2A2724;
+  --stone:        #8C8275;
+  --stone-dim:    #A79D8F;   /* muted text on dark — 7.4:1 on --ink-rich */
+  --vermilion:    #D14829;
+  --sage:         #6B7656;
+  --brass:        #C08A3E;   /* the accent that still reads on dark:
+                                 vermilion is 3.6:1 on --ink-rich (fails
+                                 body text), brass is 6.4:1 (passes AA) */
+  --grid:         rgba(22, 22, 22, .08);
+  --grid-strong:  rgba(22, 22, 22, .16);
+
+  /* ---------- layer 2 — semantic roles ---------- */
+  --bg-base:        var(--paper);
+  --bg-sunken:      var(--paper-warm);
+  --bg-raised:      var(--clay);
+  --overlay-scrim:  rgba(20, 17, 13, .86);
+
+  --text-heading:   var(--ink);
+  --text-body:      var(--ink-soft);
+  --text-muted:     var(--stone);
+  --text-accent:    var(--vermilion);
+  --text-invert:    var(--paper);
+
+  --rule-hair:      var(--grid);
+  --rule:           var(--grid-strong);
+  --rule-strong:    var(--ink);
+
+  --accent:         var(--vermilion);
+  --accent-2:       var(--sage);
+  --accent-3:       var(--brass);
+  --accent-wash:    rgba(209, 72, 41, .05);
+  --selection:      rgba(209, 72, 41, .22);
+  --focus-ring:     var(--vermilion);
+
+  --nav-bg:         rgba(250, 246, 236, .88);
+  --nav-border:     var(--ink);
+  --nav-text:       var(--stone);
+  --nav-text-hover: var(--vermilion);
+  --nav-mark:       var(--ink);
+
+  --grain-opacity:  .55;
+  --grain-blend:    multiply;
+
+  /* ---------- type ---------- */
+  --serif:  'Fraunces', 'Times New Roman', serif;
+  --sans:   'Inter', system-ui, -apple-system, sans-serif;
+  --mono:   'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+
+  --t-micro: 9px;
+  --t-meta:  11px;
+  --t-body:  15px;
+  --t-lede:  clamp(19px, 1.6vw, 23px);
+  --t-h3:    clamp(24px, 2.4vw, 34px);
+  --t-h2:    clamp(34px, 4.4vw, 56px);
+  --t-h1:    clamp(56px, 9vw, 132px);
+  --t-mega:  clamp(78px, 15vw, 260px);
+
+  /* ---------- spacing (4pt base) ---------- */
+  --s-1: 4px;    --s-2: 8px;    --s-3: 12px;   --s-4: 16px;
+  --s-5: 24px;   --s-6: 32px;   --s-7: 48px;   --s-8: 64px;
+  --s-9: 80px;   --s-10: 112px; --s-11: 160px; --s-12: 224px;
+
+  --band-y:       clamp(72px, 10vw, 140px);
+  --band-y-tight: clamp(48px, 6vw, 80px);
+  --band-y-loose: clamp(96px, 14vw, 200px);
+
+  /* ---------- radius / shadow ---------- */
+  --r-0:    0px;
+  --r-pill: 100px;
+
+  --shadow-print:     12px 12px 0 rgba(209, 72, 41, .10);
+  --shadow-print-lg:  18px 18px 0 rgba(209, 72, 41, .10);
+  --shadow-print-ink: 18px 18px 0 rgba(22, 22, 22, .08);
+  --shadow-lift:      0 18px 40px -24px rgba(22, 22, 22, .45);
+
+  /* ---------- motion ---------- */
+  --dur-instant: 120ms;
+  --dur-fast:    200ms;
+  --dur-base:    320ms;
+  --dur-slow:    560ms;
+  --dur-lazy:    900ms;
+  --ease-out:    cubic-bezier(.2, .8, .2, 1);   /* existing house easing */
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-spring: cubic-bezier(.34, 1.4, .5, 1);
+
+  /* ---------- z-index ---------- */
+  --z-base: 0; --z-raised: 10; --z-nav: 100;
+  --z-overlay: 500; --z-lightbox: 800;
+  --z-grain: 9000; --z-cursor: 9500;
+
+  /* ---------- layout ---------- */
+  --max:         1280px;
+  --max-wide:    1560px;
+  --gutter:      56px;
+  --read:        68ch;
+  --read-narrow: 46ch;
+}
+
+/* ============================================================
+   DARK BAND — one attribute re-points every semantic role, so a
+   section can flip from paper to warm-near-black by adding
+   data-band="dark" with no other markup change. Vermilion is
+   swapped for brass because it fails AA contrast on --ink-rich
+   below 24px; brass passes at 6.4:1. Not yet applied anywhere —
+   wired up section by section starting Phase 3.
+   ============================================================ */
+[data-band="dark"] {
+  --bg-base:   var(--ink-rich);
+  --bg-sunken: #1C1813;
+  --bg-raised: #241F19;
+
+  --text-heading: var(--paper);
+  --text-body:    #D9D1C2;
+  --text-muted:   var(--stone-dim);
+  --text-accent:  var(--brass);
+  --text-invert:  var(--ink);
+
+  --rule-hair:   rgba(250, 246, 236, .12);
+  --rule:        rgba(250, 246, 236, .22);
+  --rule-strong: rgba(250, 246, 236, .45);
+
+  --accent:      var(--brass);
+  --accent-wash: rgba(192, 138, 62, .08);
+  --focus-ring:  var(--brass);
+
+  --grain-opacity: .28;
+  --grain-blend:   screen;
+
+  background: var(--bg-base);
+  color: var(--text-body);
+}

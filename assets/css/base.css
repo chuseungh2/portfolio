@@ -1,0 +1,225 @@
+/* =========================================================
+   Seunghee (Kelly) Chu — Portfolio
+   Base layer: reset, atmosphere, navigation, shared utilities.
+   Shared by every page. Section-specific rules live in
+   home.css / case.css.
+   ========================================================= */
+
+/* Hide [Kelly: ...] inline-note placeholders in production. They stay in the
+   HTML source so they can be found and filled in later via view-source.
+   (Single rule — a duplicate selector previously re-declared `display: inline`
+   here and won the cascade, which left these notes visibly leaking on the
+   case-study pages. Fixed by merging into one declaration.) */
+.inline-note {
+  display: none;
+  font-family: var(--mono);
+  font-size: .72em;
+  line-height: 1.4;
+  letter-spacing: .06em;
+  color: var(--stone);
+}
+
+/* ---------- reset ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg-base); color: var(--text-heading); }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+html { scroll-padding-top: 88px; }
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 18% 8%,  rgba(209, 72, 41, .045), transparent 42%),
+    radial-gradient(circle at 82% 88%, rgba(107, 118, 86, .035), transparent 42%);
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+::selection { background: var(--selection); }
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+strong { color: var(--ink); font-weight: 600; }
+em { font-style: italic; }
+
+/* ---------- skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: var(--z-lightbox);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 12px 18px;
+  transition: top var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus { top: 16px; }
+
+/* ---------- grain overlay (전역) ---------- */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .55;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+}
+
+/* ---------- ink cursor (desktop only) ---------- */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body { cursor: none; }
+  a, button, .work-row { cursor: none; }
+  .cursor {
+    position: fixed; top: 0; left: 0;
+    width: 8px; height: 8px;
+    background: var(--vermilion);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width .2s, height .2s, opacity .2s;
+    mix-blend-mode: multiply;
+  }
+  .cursor-trail {
+    position: fixed;
+    border-radius: 50%;
+    background: var(--vermilion);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: .3;
+    mix-blend-mode: multiply;
+  }
+}
+@media not all and (hover: hover) {
+  .cursor, .cursor-trail { display: none; }
+}
+/* keyboard users must never be left with an invisible pointer */
+html.is-keyboard .cursor,
+html.is-keyboard .cursor-trail { display: none; }
+html.is-keyboard, html.is-keyboard * { cursor: auto !important; }
+
+/* ---------- shell ---------- */
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+}
+
+/* ---------- navigation ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nav-border);
+  transition: background var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px var(--gutter);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.nav-mark {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -.01em;
+  color: var(--nav-mark);
+}
+.nav-mark .back {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--nav-text);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-right: 14px;
+}
+.nav-mark .back:hover { color: var(--nav-text-hover); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.nav-links a { color: var(--nav-text); transition: color .2s; }
+.nav-links a:hover { color: var(--nav-text-hover); }
+.nav-toggle { display: none; }
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--nav-mark);
+  margin: 5px 0;
+  transform-origin: center;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 960px) {
+  .nav-links {
+    position: fixed;
+    inset: 60px 0 0 0;
+    width: 100vw;
+    min-height: calc(100vh - 60px);
+    background: var(--bg-base);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 24px;
+    transform: translateX(100%);
+    transition: transform .35s ease;
+    z-index: 1000;
+    border-top: 1px solid var(--nav-border);
+  }
+  .nav-links.is-open { transform: translateX(0); }
+  .nav-links a { font-size: 14px; }
+  .nav-toggle {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .nav-inner { padding: 14px var(--gutter); }
+  .nav-mark { font-size: 15px; }
+  .nav-mark .back { display: block; margin: 0 0 2px; font-size: 9px; }
+}
+
+/* ---------- typography utilities ---------- */
+.meta-line {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
