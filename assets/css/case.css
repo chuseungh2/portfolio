@@ -392,38 +392,6 @@ figure.artifact img,
   color: var(--stone);
 }
 
-/* ---------- parents teaser ---------- */
-.teaser-grid {
-  display: grid;
-  grid-template-columns: minmax(220px, 360px) minmax(0, var(--read));
-  gap: 56px;
-  align-items: start;
-}
-.artifact-portrait {
-  aspect-ratio: 4 / 5;
-}
-.teaser-copy p {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 24px;
-  line-height: 1.45;
-  color: var(--ink);
-  margin-bottom: 32px;
-}
-.teaser-copy h3 {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--vermilion);
-  margin-bottom: 16px;
-}
-.teaser-copy ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 /* =========================================================
    RESPONSIVE — case pages only
    ========================================================= */
@@ -441,8 +409,6 @@ figure.artifact img,
   .screen { grid-template-columns: 1fr; gap: 16px; }
   .case-next a { grid-template-columns: 1fr; }
   .case-next .next-thumb { display: none; }
-  .teaser-grid { grid-template-columns: 1fr; gap: 28px; }
-  .artifact-portrait { max-width: 320px; }
 }
 
 @media (max-width: 480px) {
