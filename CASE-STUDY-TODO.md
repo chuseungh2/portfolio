@@ -1,74 +1,94 @@
 # Case study TODOs
 
-Things left for Kelly to fill in across the case-study pages. These exist in the HTML too, as
-`<span class="inline-note">[Kelly: ...]</span>` right next to where they belong — that markup is
-hidden on the live site (`.inline-note { display: none; }` in `assets/css/styles.css`), so it's
-easy to forget it's there. This file is the visible index so nothing gets lost in view-source.
+Everything Kelly needs to fill in, hand off, or confirm across the three case-study pages.
+Ordered by priority — top items matter most.
 
-> **This was a real live-site bug, now fixed.** `styles.css` had **two** `.inline-note` rules at
-> equal specificity — `display: none` near the top and `display: inline` further down — and the
-> later one won the cascade. All **12** notes were therefore visible to anyone who opened the
-> site: 3 on the home page, 7 on Asah, 2 on Scrim. They are now consolidated into a single rule.
-> If you ever want to see them while drafting, flip that one rule to `display: inline`.
+These also live in the HTML itself, as `<span class="inline-note">[Kelly: ...]</span>` right next
+to where they belong — that markup is hidden on the live site (`.inline-note { display: none; }`
+in `assets/css/styles.css`), so it's easy to forget it's there. This file is the visible index so
+nothing gets lost in view-source. (Earlier there was a real bug where a duplicate `.inline-note`
+rule made all of these visible to site visitors — that's fixed. If you ever want to see the notes
+while drafting, flip that one rule to `display: inline`.)
 
-Current count: **12 notes** — home 3 · asah 7 · health-u 0 · scrim 2.
+**Current count: 16 notes** — home 3 · asah 7 · health-u 2 · scrim 4.
 
-## asah/ — Goal section added, needs review
+---
 
-Added a new `04 Goal` section (Nika-template-inspired) that reconstructs the team's implicit
-success bar from existing copy. **Please read it and confirm it's actually right, or rewrite it**
-— it's a reasonable inference, not something you told me directly.
+## Priority 1 — things the live site is currently missing or showing broken
 
-- **`asah/index.html:51`** — Tools row only lists Figma. What else did you actually use
-  (Cursor? VS Code? something for the RAG/backend work?).
-- **`asah/index.html:64`** — snapshot outcome blurb: one line of test/feedback result, if you have any.
-- **`asah/index.html:96`** — confirm the RAG description is accurate, or rewrite it in your own words.
-- **`asah/index.html:117`** — startup failure-rate stat: a real number/source lands harder than "most."
-- **`asah/index.html:119`** — name 2-3 real competitors instead of "existing tools."
-- **`asah/index.html:133`** — new Goal section ends with a placeholder asking for a real,
-  measurable success bar once Asah has actual usage (activation rate, retention, etc.) instead of
-  the qualitative bar it has today.
+### Scrim's Outcome section is close to empty
 
-## ⭐ Next thing to do: drop in the hackathon-version screenshot
+`scrim/index.html`, section `07 Outcome` — two full `.inline-note` paragraphs with nothing else
+around them. The project ran March–May 2026; it's August now, so the final critique has almost
+certainly already happened. This is the most out-of-date content on the whole site.
 
-**Save it as exactly `assets/images/asah/asah-old-home.png`**, then open
-`asah/index.html`, find the `TODO(Kelly)` comment inside Decision 01, and delete the two
-comment lines wrapping the `<div class="artifact-grid">` block (plus the `.inline-note`
-paragraph right after it). That restores the before/after comparison.
+Give me, in a sentence or two each:
+1. What came out of the midterm user test (one participant) — what did they hit, and what did
+   you change because of it?
+2. If there was a second testing round between midterm and final, what happened there.
+3. How the final critique went — professor feedback, class reaction, anything you'd want a
+   reviewer of this portfolio to see.
 
-Why it was commented out: that file has **never existed in this repo** — not in any commit.
-The markup was written expecting it, so the live site was rendering a broken image next to the
-"after" shot. Commenting it out is temporary; the comparison is worth having, since Decision 01
-is entirely an argument about changing direction, and a pivot lands much harder when you can see
-both directions side by side. It's also the only place in the whole portfolio that shows a
-version you *abandoned*, which reads as more mature than a wall of finished screens.
+### Four broken images
 
-One thing to decide when you restore it: the "after" image is `asah-hero.png`, the same image
-already used as the case hero at the top of the page. In a labeled before/after pair that repeat
-is arguably fine — it anchors "the screen you saw up top is the result of this decision" — but if
-you'd rather not repeat it, swap in a different screen and adjust the caption (currently
-"same greeting, but it answers as someone you can talk to", which assumes a same-screen comparison).
+Each of these is referenced in the HTML but the file has never existed in the repo, so the site
+is currently showing a broken image at that spot. Save each one at the **exact path** below and
+it'll appear automatically — no code changes needed on your end.
 
-## Other known broken images (all pre-existing)
+| Save as this exact path | Where it's used |
+|---|---|
+| `assets/images/asah/asah-old-home.png` | Asah, Decision 01 — the pre-pivot hackathon home screen, for a before/after comparison. **Currently commented out of the page** so nothing looks broken; see the note in Decision 01 for how to bring it back. |
+| `assets/images/health-u/healthu-appointment-autofill.png` | Health U, Decision 01 |
+| `assets/images/scrim/scrim-onboarding-1.png` | Scrim, section 06 The design |
+| `assets/images/scrim/scrim-onboarding-2.png` | Scrim, section 06 The design |
 
-- `health-u/index.html:133` → `assets/images/health-u/healthu-appointment-autofill.png` — 404.
-- `scrim/index.html:215,225` → `assets/images/scrim/scrim-onboarding-1.png` and `-2.png` — 404 (two images).
+---
 
-## scrim/ — Outcome section is essentially empty
+## Priority 2 — things I wrote as an inference, need your confirmation
 
-`scrim/index.html:301-302` — two full `.inline-note` paragraphs with nothing else in the section:
-what came out of the midterm user test (one participant), and how the final critique went. The
-project ran March–May 2026; it's August now, so the final critique has almost certainly already
-happened — this is the most stale content on the whole site and worth fixing before the other
-structural stuff below.
+All three case studies now have a `Goal` section (new, inspired by Nika's template — the idea is
+to state the bar the project had to clear *before* showing the solution). None of the three had
+an explicit stated goal anywhere in the original copy, so I reconstructed each one from what was
+already implied elsewhere in your writing. **Please read these and either confirm they're right,
+or rewrite them in your own words** — they're a reasonable inference, not something you told me
+directly, and Goal is exactly the kind of section where being wrong is worse than leaving blank.
 
-## Structural: apply the same Nika-cherry-pick to Health U and Scrim
+- **`asah/index.html`, section `04 Goal`** — built from the pivot logic in Decision 01 and the
+  "beginner-friendly" thread through the rest of the page.
+- **`health-u/index.html`, section `04 Goal`** — built from the "does this make her day easier,
+  or harder?" line in Research and the three design principles in 06 The design.
+- **`scrim/index.html`, section `04 Goal`** — built from "make the meeting part frictionless" and
+  the specific constraints in Decisions 01-03 (three-input onboarding, no dead-end screens).
 
-Once you're happy with how the new `04 Goal` section reads on Asah, the same three additions go
-on the other two case studies (see the memory note `portfolio-case-study-structure-decision` for
-the reasoning):
-1. A `Goal` section inserted after Research, before Decisions (renumbers everything after it).
-2. A short jargon glossary at the end of Context & problem, if either page uses terms a
-   non-specialist reader wouldn't know.
-3. A `Status` row in the meta strip (Health U and Scrim are course projects, so this would read
-   more like "Course project — completed" than "in development," but worth stating explicitly).
+Two more confirmations, both in meta strips (new `Status` row on Health U and Scrim):
+
+- **`health-u/index.html`** — I wrote "design and demo only, never built." Confirm nothing was
+  prototyped or built beyond the Figma designs.
+- **`scrim/index.html`** — I left this vague ("Course project") on purpose. Your own copy in
+  My role says "...hi-fi prototype, most of the build" — I can't tell from that whether "build"
+  means an actual coded app or a hi-fi Figma prototype. Tell me which and I'll write the real line.
+- **`asah/index.html`, section `02 My role`** — the RAG description ("pull the right business
+  context into every response") — confirm it's accurate or rewrite it in your words.
+
+---
+
+## Priority 3 — nice to have, would make the strongest sections stronger
+
+- **Asah** — what tools you used besides Figma (Cursor? something for the backend/RAG work?).
+- **Asah** — a real number/source for the startup failure-rate stat in Research (a specific figure
+  lands harder than "most startups fail because of operations, not the idea").
+- **Asah** — name 2-3 real competitor products instead of "existing tools," in Research.
+- **Asah** — one line of test/feedback result for the hero snapshot outcome blurb, if you have any.
+- **Health U** — a grade, rubric note, or specific professor comment beyond "well done," if one
+  exists — Outcome currently only has classmate reactions.
+- **All three** — once any of these has real usage, the qualitative Goal/Impact language should
+  get replaced with an actual measurable bar (activation rate, retention, completion rate, etc.).
+
+---
+
+## Structural note (for me, not you)
+
+Asah, Health U, and Scrim all now share the same 8-section shape:
+`01 Context & problem · 02 My role · 03 Research · 04 Goal · 05 ★ Decisions & tradeoffs ·
+06 The design · 07 Outcome · 08 Reflection`. Any future case study should start from this shape
+rather than the old 7-section one.
