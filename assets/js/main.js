@@ -1,6 +1,6 @@
 /* =========================================================
    main.js — scroll reveal, scroll-spy, nav inversion, lightbox,
-   media loading, cursor + hero mark, warmth dial, parallax.
+   media loading, cursor + hero mark, warmth dial.
 
    One IIFE, zero dependencies. Each init* guards its own
    preconditions and no-ops if its markup isn't present, so this
@@ -428,30 +428,7 @@
     range.addEventListener('input', function () { apply(range.value); });
   }
 
-  /* ---------- 11. subtle parallax on the work-index portrait pair ---------- */
-  function initParallax() {
-    if (reduced.matches) return;
-    var els = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
-    if (!els.length) return;
-
-    var ticking = false;
-    var update = function () {
-      var vh = window.innerHeight;
-      els.forEach(function (el) {
-        var r = el.getBoundingClientRect();
-        var progress = (r.top + r.height / 2 - vh / 2) / vh;
-        var y = Math.max(-18, Math.min(18, progress * -18));
-        el.style.setProperty('--parallax-y', y.toFixed(1) + 'px');
-      });
-      ticking = false;
-    };
-    document.addEventListener('scroll', function () {
-      if (!ticking) { requestAnimationFrame(update); ticking = true; }
-    }, { passive: true });
-    update();
-  }
-
-  /* ---------- 12. anchor scroll — focuses the target so keyboard users
+  /* ---------- 11. anchor scroll — focuses the target so keyboard users
      land where sighted users land, which scrollIntoView alone doesn't do ---------- */
   function initAnchors() {
     document.addEventListener('click', function (e) {
@@ -480,7 +457,6 @@
     initCursor();
     initKeyboardGuard();
     initWarmthDial();
-    initParallax();
     initAnchors();
   }
 
