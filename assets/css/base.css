@@ -161,7 +161,8 @@ html.is-keyboard, html.is-keyboard * { cursor: auto !important; }
   text-transform: uppercase;
 }
 .nav-links a { color: var(--nav-text); transition: color .2s; }
-.nav-links a:hover { color: var(--nav-text-hover); }
+.nav-links a:hover,
+.nav-links a.is-current { color: var(--nav-text-hover); }
 .nav-toggle { display: none; }
 .nav-toggle span {
   display: block;
@@ -217,6 +218,33 @@ html.is-keyboard, html.is-keyboard * { cursor: auto !important; }
   .nav-mark .back { display: block; margin: 0 0 2px; font-size: 9px; }
 }
 
+/* nav center zone — live scroll-spy readout, desktop only */
+.nav-here {
+  display: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+}
+@media (min-width: 700px) {
+  .nav-here { display: block; }
+}
+/* 1px scroll-progress hairline riding the nav's bottom border */
+.nav-progress {
+  position: absolute;
+  left: 0; bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nav-progress { transition: transform 80ms linear; }
+}
+
 /* ---------- typography utilities ---------- */
 .meta-line {
   font-family: var(--mono);
@@ -224,6 +252,95 @@ html.is-keyboard, html.is-keyboard * { cursor: auto !important; }
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--stone);
+}
+
+/* ---------- scroll reveal ----------
+   Progressive enhancement: everything is visible by default (.no-js and
+   a failed/slow JS load both leave content on-screen). JS opts elements
+   in via [data-reveal], then IntersectionObserver adds .is-in. */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-y, 20px), 0);
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    transition:
+      opacity var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms),
+      transform var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms);
+  }
+}
+[data-reveal].is-in { opacity: 1; transform: none; }
+[data-reveal="rise"] { --reveal-y: 36px; }
+[data-reveal="mask"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal="mask"] {
+    transition: clip-path var(--dur-lazy) var(--ease-out) var(--reveal-delay, 0ms);
+  }
+}
+[data-reveal="mask"].is-in { clip-path: inset(0 0 -1% 0); }
+/* belt-and-suspenders: if JS never initializes reveal, nothing stays hidden */
+.no-js [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+/* ---------- lazy media fade-in ----------
+   JS adds .is-loading only to images not yet complete, so the default
+   (no class, no JS) state is always fully visible. */
+@media (prefers-reduced-motion: no-preference) {
+  img { transition: opacity var(--dur-base) var(--ease-out); }
+}
+img.is-loading { opacity: .01; }
+
+/* ---------- lightbox (native <dialog>) ---------- */
+.lightbox {
+  border: 0;
+  padding: 0;
+  max-width: min(94vw, 1400px);
+  max-height: 90vh;
+  background: transparent;
+  color: var(--paper);
+  overflow: visible;
+}
+.lightbox::backdrop { background: var(--overlay-scrim); }
+.lightbox-frame { position: relative; display: grid; justify-items: center; gap: 14px; }
+.lightbox img { max-width: 90vw; max-height: 76vh; width: auto; height: auto; border: 1px solid rgba(250, 246, 236, .16); }
+.lightbox-caption {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--stone-dim);
+  text-align: center;
+  max-width: 60ch;
+}
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  background: rgba(20, 17, 13, .75);
+  color: var(--paper);
+  border: 1px solid rgba(250, 246, 236, .28);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 16px;
+  cursor: pointer;
+}
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { border-color: var(--brass); color: var(--brass); }
+.lightbox-close { top: -48px; right: 0; }
+.lightbox-prev { left: -52px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: -52px; top: 50%; transform: translateY(-50%); }
+.lightbox-prev[hidden], .lightbox-next[hidden] { display: none; }
+@media (max-width: 760px) {
+  .lightbox-close { top: -44px; right: 0; }
+  .lightbox-prev, .lightbox-next { width: 36px; height: 36px; }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
 }
 
 /* respect reduced motion */

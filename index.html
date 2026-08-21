@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.remove('no-js');</script>
 <title>Seunghee (Kelly) Chu — UX Designer</title>
 <meta name="description" content="UX designer making AI feel human. Selected work, playground, and contact.">
 
@@ -21,6 +22,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-mark" href="#top">Seunghee Chu</a>
+    <span class="nav-here" aria-hidden="true"></span>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -31,15 +33,16 @@
       <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
     </div>
   </div>
+  <div class="nav-progress" aria-hidden="true"></div>
 </nav>
 
 <main id="top">
 
-  <section class="wrap hero">
+  <section class="wrap hero" data-nav-label="TOP">
     <div class="hero-mark" aria-hidden="true"></div>
-    <h1>
-      <span class="line">I design AI that</span>
-      <span class="line"><span class="feels">feels</span> human<span class="dot">.</span></span>
+    <h1 data-reveal-group data-reveal-step="140">
+      <span class="line" data-reveal="mask">I design AI that</span>
+      <span class="line" data-reveal="mask"><span class="feels">feels</span> human<span class="dot">.</span></span>
     </h1>
     <p class="hero-aside meta-line">AI/UX · interaction · design + build</p>
     <div class="hero-bottom">
@@ -51,7 +54,7 @@
     </div>
   </section>
 
-  <section class="wrap sec" id="work">
+  <section class="wrap sec" id="work" data-nav-label="01 / WORK">
     <div class="sec-head">
       <span class="sec-num">01 — 04</span>
       <div>
@@ -59,9 +62,9 @@
       </div>
     </div>
 
-    <ol class="work-index">
+    <ol class="work-index" data-reveal-group data-reveal-step="90">
 
-      <li class="work-feature">
+      <li class="work-feature" data-reveal="rise">
         <a href="asah/">
           <span class="work-feature-num" aria-hidden="true">01</span>
           <figure class="work-feature-media">
@@ -75,7 +78,8 @@
                 sizes="(max-width: 960px) 92vw, 58vw"
                 width="1600" height="1137"
                 loading="eager" fetchpriority="high" decoding="async"
-                alt="The first thing a founder sees — a manager that greets you and asks what's wrong, before any dashboard.">
+                alt="The first thing a founder sees — a manager that greets you and asks what's wrong, before any dashboard."
+                data-lightbox="asah" data-full="assets/images/home/asah-featured-1600.jpg">
             </picture>
           </figure>
           <div class="row-body">
@@ -88,10 +92,10 @@
         </a>
       </li>
 
-      <li class="work-pair-item work-pair-healthu">
+      <li class="work-pair-item work-pair-healthu" data-reveal="rise">
         <a href="health-u/">
           <span class="row-num">02</span>
-          <figure class="work-pair-media">
+          <figure class="work-pair-media" data-parallax>
             <picture>
               <source type="image/avif"
                 srcset="assets/images/home/healthu-featured-390.avif 390w, assets/images/home/healthu-featured-780.avif 780w"
@@ -102,7 +106,8 @@
                 sizes="(max-width: 960px) 44vw, 27vw"
                 width="359" height="780"
                 loading="lazy" decoding="async"
-                alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms.">
+                alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms."
+                data-lightbox="healthu" data-full="assets/images/home/healthu-featured-780.jpg">
             </picture>
           </figure>
           <div class="row-body">
@@ -115,10 +120,10 @@
         </a>
       </li>
 
-      <li class="work-pair-item work-pair-scrim">
+      <li class="work-pair-item work-pair-scrim" data-reveal="rise">
         <a href="scrim/">
           <span class="row-num">03</span>
-          <figure class="work-pair-media">
+          <figure class="work-pair-media" data-parallax>
             <picture>
               <source type="image/avif"
                 srcset="assets/images/home/scrim-featured-390.avif 390w, assets/images/home/scrim-featured-780.avif 780w"
@@ -129,7 +134,8 @@
                 sizes="(max-width: 960px) 44vw, 27vw"
                 width="295" height="780"
                 loading="lazy" decoding="async"
-                alt="The first thing you see is people to play with — the payoff, before any setup.">
+                alt="The first thing you see is people to play with — the payoff, before any setup."
+                data-lightbox="scrim" data-full="assets/images/home/scrim-featured-780.jpg">
             </picture>
           </figure>
           <div class="row-body">
@@ -142,7 +148,7 @@
         </a>
       </li>
 
-      <li class="work-hold">
+      <li class="work-hold" data-reveal="rise">
         <a href="#parents-gpt">
           <span class="row-num">04</span>
           <span class="work-hold-plate" aria-hidden="true"></span>
@@ -160,12 +166,12 @@
     </ol>
   </section>
 
-  <section class="band" id="about" data-band="dark">
+  <section class="band" id="about" data-band="dark" data-nav-label="— / ABOUT">
     <div class="band-inner">
-      <p class="about-statement">Warm enough to use, <em>credible enough to trust</em>.</p>
+      <p class="about-statement" data-reveal="rise">Warm enough to use, <em>credible enough to trust</em>.</p>
 
       <div class="about-split">
-        <div class="about-prose">
+        <div class="about-prose" data-reveal="rise">
           <p>I'm a UX designer interested in making AI feel less like AI. The question I keep returning to — across an AI business manager, a chronic-illness assistant, and a workout-meetup app — is the same one: how do you make something <em>warm enough to use, but credible enough to trust?</em> I study UX Design at SCAD, and I tend to design and build in the same hour.</p>
 
           <dl class="about-facts">
@@ -175,10 +181,27 @@
           </dl>
         </div>
       </div>
+
+      <div class="warmth-dial" data-warmth-dial data-reveal="rise">
+        <p class="warmth-dial-label">Try it — drag toward warm or clinical</p>
+        <div class="warmth-reply" data-tone="balanced">
+          <p data-warmth-text aria-live="polite">
+            Got it — here's what I found. Three options.
+            <span class="warmth-dots" data-warmth-dots aria-hidden="true"><span class="is-active"></span><span class="is-active"></span><span></span></span>
+          </p>
+        </div>
+        <input type="range" min="0" max="100" value="50" step="1"
+          data-warmth-range aria-label="Reply tone, from clinical to warm" aria-describedby="warmth-cost">
+        <div class="warmth-readout" aria-hidden="true">
+          <span>← more predictable</span>
+          <span>more human →</span>
+        </div>
+        <p class="warmth-cost" id="warmth-cost">At 100: users trust it less when it's wrong.</p>
+      </div>
     </div>
   </section>
 
-  <section class="band band--sunken" id="playground">
+  <section class="band band--sunken" id="playground" data-nav-label="— / PLAYGROUND">
     <div class="band-inner">
       <div class="sec-head">
         <span class="sec-num">— Playground</span>
@@ -188,8 +211,8 @@
         </div>
       </div>
 
-      <div class="play-grid">
-        <a class="play-card play-card-01" href="https://chuseungh2.github.io/ThemeSelect/" target="_blank" rel="noopener">
+      <div class="play-grid" data-reveal-group data-reveal-step="100">
+        <a class="play-card play-card-01" href="https://chuseungh2.github.io/ThemeSelect/" target="_blank" rel="noopener" data-reveal="rise">
           <span class="play-tag">01 / ThemeSelect</span>
           <div>
             <h3>One UI structure, three radically different visual systems.</h3>
@@ -198,7 +221,7 @@
           <span class="play-link">Live ↗</span>
         </a>
 
-        <a class="play-card play-card-02" href="https://chuseungh2.github.io/ReactiveSandbox/" target="_blank" rel="noopener">
+        <a class="play-card play-card-02" href="https://chuseungh2.github.io/ReactiveSandbox/" target="_blank" rel="noopener" data-reveal="rise">
           <span class="play-tag">02 / ReactiveSandbox</span>
           <div>
             <h3>An interactive mission planner. Built to <em>do</em>, not look like it would.</h3>
@@ -207,7 +230,7 @@
           <span class="play-link">Live ↗</span>
         </a>
 
-        <div class="play-card play-card-03 play-card-soon">
+        <div class="play-card play-card-03 play-card-soon" data-reveal="rise">
           <span class="play-tag">03 / Rhino</span>
           <div>
             <h3>Models from the corner of my practice that's about hands and form.</h3>
@@ -219,21 +242,21 @@
     </div>
   </section>
 
-  <section class="wrap sec-letter" id="parents-gpt">
+  <section class="wrap sec-letter" id="parents-gpt" data-nav-label="04 / IN PROGRESS">
     <p class="letter-meta meta-line">In progress</p>
     <h2 class="letter-title">Parents' GPT</h2>
-    <div class="letter-body">
+    <div class="letter-body" data-reveal="rise">
       <p>A personal AI assistant I'm building for my parents — the closest the <em>make AI feel human</em> question gets to my own life. The user I love most, and want least to confuse.</p>
     </div>
     <p class="letter-subhead meta-line">Currently exploring</p>
-    <ul class="letter-questions">
-      <li>How much an AI assistant should <em>anticipate</em> vs. <em>ask</em>, when the user isn't fluent in AI.</li>
-      <li>What the interface looks like when there is no "prompt" — only a conversation that already started.</li>
+    <ul class="letter-questions" data-reveal-group data-reveal-step="80">
+      <li data-reveal="rise">How much an AI assistant should <em>anticipate</em> vs. <em>ask</em>, when the user isn't fluent in AI.</li>
+      <li data-reveal="rise">What the interface looks like when there is no "prompt" — only a conversation that already started.</li>
     </ul>
     <p class="letter-sign">— K</p>
   </section>
 
-  <section class="band contact" id="contact" data-band="dark">
+  <section class="band contact" id="contact" data-band="dark" data-nav-label="— / CONTACT">
     <div class="band-inner">
       <div class="contact-links">
         <a href="mailto:chuseungh2@gmail.com">
@@ -249,7 +272,7 @@
           <span class="contact-link-dest">PDF ↗</span>
         </a>
       </div>
-      <h2>
+      <h2 data-reveal="rise">
         Let's make something<br>
         that <span class="feels">feels</span> human<span class="dot">.</span>
       </h2>

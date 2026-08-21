@@ -164,11 +164,15 @@
   margin-top: 12px;
   margin-bottom: 20px;
   box-shadow: var(--shadow-print);
+  /* --parallax-y is written by JS (initParallax); a plain CSS custom
+     property composes with the hover transform below without either
+     one clobbering the other via inline-style specificity. */
+  transform: translateY(var(--parallax-y, 0px));
 }
 .work-pair-healthu .work-pair-media { background: #E6E9DC; box-shadow: 12px 12px 0 rgba(107, 118, 86, .12); }
 .work-pair-scrim .work-pair-media   { background: #EDE6D8; box-shadow: 12px 12px 0 rgba(140, 130, 117, .16); }
 .work-pair-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.work-pair-item > a:hover .work-pair-media { transform: translateY(-4px); }
+.work-pair-item > a:hover .work-pair-media { transform: translateY(calc(var(--parallax-y, 0px) - 4px)); }
 .work-pair-item > a:hover h3 { color: var(--accent); }
 
 .work-hold { grid-column: 1 / -1; }
@@ -278,6 +282,88 @@
 }
 .about-facts dt { color: var(--text-accent); }
 .about-facts dd { color: var(--text-heading); }
+
+/* ---------- warmth dial (signature interactive element) ----------
+   Makes the section's own thesis operable: drag toward "warm" and the
+   mock reply below gets softer and more human; drag toward "clinical"
+   and it gets terser. Degrades gracefully — the range input works
+   natively even if JS never runs, it just won't change the reply. */
+.warmth-dial {
+  margin-top: var(--s-9);
+  padding-top: var(--s-7);
+  border-top: 1px solid var(--rule-hair);
+  max-width: 46ch;
+}
+.warmth-dial-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--text-accent);
+  margin-bottom: 20px;
+}
+.warmth-reply {
+  min-height: 60px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  background: rgba(250, 246, 236, .03);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .warmth-reply { transition: border-radius var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out); }
+}
+.warmth-reply p { color: var(--text-body); }
+.warmth-reply[data-tone="clinical"] { border-radius: var(--r-0); }
+.warmth-reply[data-tone="clinical"] p { font-family: var(--mono); font-size: 13px; letter-spacing: .01em; }
+.warmth-reply[data-tone="balanced"] { border-radius: 4px; }
+.warmth-reply[data-tone="balanced"] p { font-family: var(--sans); font-size: 15px; }
+.warmth-reply[data-tone="warm"] { border-radius: 18px; border-color: var(--accent); }
+.warmth-reply[data-tone="warm"] p { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--text-heading); }
+.warmth-dots { display: inline-flex; gap: 4px; margin-left: 10px; vertical-align: middle; }
+.warmth-dots span {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: currentColor; opacity: .25;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .warmth-dots span.is-active { animation: dot-pulse 1s ease-in-out infinite; }
+  .warmth-dots span.is-active:nth-child(2) { animation-delay: .15s; }
+  .warmth-dots span.is-active:nth-child(3) { animation-delay: .3s; }
+}
+@keyframes dot-pulse { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+.warmth-dial input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1px;
+  background: var(--rule);
+  margin: 24px 0 16px;
+}
+.warmth-dial input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  background: var(--accent);
+  cursor: pointer;
+  margin-top: -8px;
+}
+.warmth-dial input[type="range"]::-moz-range-thumb {
+  width: 16px; height: 16px;
+  background: var(--accent);
+  border: 0;
+  cursor: pointer;
+}
+.warmth-readout {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.warmth-cost {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-accent);
+}
 
 /* ---------- playground (sunken band, staircase) ---------- */
 .section-kicker {
