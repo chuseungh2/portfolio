@@ -337,12 +337,14 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
 .row-thumb.tone-sage      { background: linear-gradient(135deg, var(--sage), #4F5A3F); }
 .row-thumb.tone-ink       { background: var(--ink); }
 .row-thumb.tone-stone     { background: linear-gradient(135deg, var(--stone), #6E6457); }
+.row-thumb.tone-moss      { background: linear-gradient(135deg, #3E4A33, #232A1D); }
 .mock-window,
 .mock-phone,
 .mock-chat,
 .mock-orbit,
 .mock-pulse,
-.mock-court {
+.mock-court,
+.mock-spread {
   position: absolute;
   display: block;
 }
@@ -434,6 +436,40 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
     linear-gradient(rgba(250, 246, 236, .72), rgba(250, 246, 236, .72)) 18px 20px / 62% 1px no-repeat,
     linear-gradient(rgba(250, 246, 236, .42), rgba(250, 246, 236, .42)) 18px 42px / 42% 1px no-repeat,
     linear-gradient(rgba(209, 72, 41, .78), rgba(209, 72, 41, .78)) 18px 68px / 54% 1px no-repeat;
+}
+.mock-spread {
+  inset: 22% 15%;
+  border: 1px solid rgba(250, 246, 236, .68);
+  background:
+    /* left page: a title rule + body lines */
+    linear-gradient(rgba(250, 246, 236, .82), rgba(250, 246, 236, .82)) 12px 14px / 30% 1px no-repeat,
+    linear-gradient(rgba(250, 246, 236, .38), rgba(250, 246, 236, .38)) 12px 30px / 34% 1px no-repeat,
+    linear-gradient(rgba(250, 246, 236, .38), rgba(250, 246, 236, .38)) 12px 40px / 34% 1px no-repeat,
+    linear-gradient(rgba(250, 246, 236, .38), rgba(250, 246, 236, .38)) 12px 50px / 26% 1px no-repeat,
+    /* right page */
+    linear-gradient(rgba(250, 246, 236, .82), rgba(250, 246, 236, .82)) 56% 14px / 30% 1px no-repeat,
+    linear-gradient(rgba(250, 246, 236, .38), rgba(250, 246, 236, .38)) 56% 30px / 34% 1px no-repeat,
+    linear-gradient(rgba(250, 246, 236, .38), rgba(250, 246, 236, .38)) 56% 40px / 30% 1px no-repeat;
+}
+/* the gutter, and a sticky note pinned to the spread */
+.mock-spread::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(250, 246, 236, .5);
+}
+.mock-spread::after {
+  content: "";
+  position: absolute;
+  right: -13px;
+  bottom: -13px;
+  width: 30px;
+  height: 30px;
+  background: rgba(250, 246, 236, .9);
+  transform: rotate(-7deg);
 }
 .row-body h3 {
   font-family: var(--serif);
