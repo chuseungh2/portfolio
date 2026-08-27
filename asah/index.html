@@ -47,8 +47,8 @@
       <div><dt>Type</dt><dd>Web app (mobile planned)</dd></div>
       <div><dt>Status</dt><dd>Hackathon entry, now in active development — not yet launched</dd></div>
       <div><dt>Timeline</dt><dd>Feb 2026 – present</dd></div>
-      <div><dt>My role</dt><dd>Backend &amp; RAG lead, shared design &amp; research</dd></div>
-      <div><dt>Tools</dt><dd>Figma, <span class="inline-note">[Kelly: other tools]</span></dd></div>
+      <div><dt>My role</dt><dd>Backend &amp; research (with a teammate), shared design</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Vite/React/TypeScript, Python (FastAPI), Supabase</dd></div>
       <div><dt>Team</dt><dd>Team of 3</dd></div>
       <div><dt>Context</dt><dd>Built for the Amazon Nova Hackathon</dd></div>
     </dl>
@@ -73,9 +73,10 @@
     <div class="case-body">
       <p>Most startups begin as a single good idea. The founder is usually a designer, an engineer, or a domain expert — rarely a business operator. Yet the moment the idea becomes a company, the business side arrives all at once: operations, scheduling, planning, coordination, admin. It's work that has to happen, and it quietly eats the hours that should go into the product itself.</p>
       <p>There are AI tools that promise to help. But they tend to be fragmented — a different tool for every task — and most assume the user is already comfortable with AI agents, prompts, and configuration. For a founder who just wants their business to run, that's one more thing to learn, not a thing that helps.</p>
-      <p>Asah started as a project for the Amazon Nova Hackathon. The idea resonated — with the judges and with us — enough that the team decided not to leave it as a hackathon entry. We chose to keep building it as a real product.</p>
+      <p>Asah started as a project for the Amazon Nova Hackathon. That original version was built for first-time founders specifically: it scored a business idea for viability — strengths, risks, revenue projections — scanned uploaded contracts and legal documents for risk, and laid out a roadmap of what to do next. It didn't win. But the idea resonated enough — with us, if not with the judges — that the team decided not to leave it as a hackathon entry, and rebuilt it into the web-first, agent-based product described below.</p>
       <p><strong>Who it's for:</strong> solo founders and small startup teams who don't have business expertise on the team — and who aren't familiar with AI agents either.</p>
       <p><strong>Constraints:</strong> a hackathon timeline to start, a team of three, and a build on Amazon Nova.</p>
+      <p>This isn't a hypothetical gap: founders already pay for the pieces of it separately — outsourced ops help, scattered business-management SaaS, sometimes a part-time hire just to keep the admin from piling up. Asah's bet is that a single manager replaces the stack, not that it invents a need nobody has. <span class="inline-note">[Kelly: if you have a real number or example from the competitor research in 03 — what founders typically spend on this today, or a specific tool people pay for — it'd land harder here than the general claim above.]</span></p>
       <p class="case-note">Three terms, if this space is new to you: an <strong>AI agent</strong> is software that can plan and carry out multi-step actions on its own, not just answer a single question. <strong>RAG</strong> (retrieval-augmented generation) is how a model pulls in real, specific information — in Asah's case, a business's own data — before it answers, instead of relying only on what it learned during training. <strong>Amazon Nova</strong> is Amazon's family of foundation models, the base Asah's agents run on.</p>
     </div>
   </section>
@@ -87,15 +88,13 @@
     </div>
     <div class="case-body">
       <div class="role-tags">
-        <span>Backend</span>
-        <span>RAG architecture</span>
+        <span>Backend (shared)</span>
         <span>Shared design</span>
         <span>Shared research</span>
       </div>
       <p><strong>Team of three.</strong> Design and research were shared — all three of us shaped the concept, the users, and the direction together.</p>
-      <p>On top of that shared work, I owned the <strong>backend and the RAG architecture</strong> that lets Asah's agents pull the right business context into every response — so the manager actually feels like it knows the company it's running. <span class="inline-note">[Kelly: confirm this is right, or replace with how you'd describe what your RAG setup does.]</span></p>
-      <p>On the design side, the line I kept pushing every team decision back to: <em>friendly enough that a first-time AI user isn't intimidated, but never so playful that it stops reading as a serious business tool.</em> A business manager that looks childish loses trust the moment a founder considers handing real work to it. That tension — warm but credible — is the rule the whole interface was tuned against.</p>
-      <p>It's the part of this project I'm most glad to be able to point to: I didn't just help design how Asah should feel — I built the system underneath it.</p>
+      <p>The backend and knowledge layer were also team work — I built it alongside a teammate, leaning on AI-assisted coding for both of us, and at this distance I can't cleanly separate which lines were whose. What I can speak to is the thinking: what the agent contract had to guarantee (an honest "uncertain" instead of a confident guess), and why the knowledge layer needed to ground an agent in the specific company it's working for, not answer in generalities. See <strong>06 How it works</strong> for what that actually looks like in the code.</p>
+      <p>On the design side, the line I kept pushing every team decision back to: <em>friendly enough that a first-time AI user isn't intimidated, but never so playful that it stops reading as a serious business tool.</em> A business manager that looks childish loses trust the moment a founder considers handing real work to it. That tension — warm but credible — is the rule the whole interface was tuned against, backend included.</p>
     </div>
   </section>
 
@@ -117,6 +116,7 @@
         <li><strong>Most startups fail for reasons that have nothing to do with the idea itself.</strong> Operations, money, and team management show up far more often than a weak product. → That confirmed our focus: take the <em>business</em> side off the founder, not the product side. <span class="inline-note">[Kelly: if there's a specific number or source you remember (e.g. "X% of startups fail because of…"), drop it in.]</span></li>
         <li><strong>The founders who struggle most don't have a business operator on the team.</strong> Many small startups are technical or design-led, and the business workload lands on whoever has time. → That sharpened our target audience: solo founders and small teams without that expertise.</li>
         <li><strong>The tools that exist are either fragmented or too technical.</strong> Most assume the user is already fluent in AI agents, prompts, and configuration. → That set the differentiation: not another tool to learn, but a single <em>manager</em> that handles the agents on the user's behalf. <span class="inline-note">[Kelly: if there were 2-3 specific competitors you compared against, name them here — concrete names land harder than "existing tools."]</span></li>
+        <li><strong>Founders don't know what to do once they've actually launched.</strong> Idea-stage guidance is everywhere; reports and founder accounts kept surfacing the same gap: once a business is actually running, there's no clear signal for the next move. → This is the finding that outlasted the pivot itself: the hackathon version answered it with a static roadmap screen (see Decision 02); the current one answers it by having the agents plan against a founder's actual goals and surface what's next directly, instead of a checklist everyone walks through the same way.</li>
       </ol>
     </div>
   </section>
@@ -157,8 +157,8 @@
                  CASE-STUDY-TODO.md.
             <div class="artifact-grid">
               <figure class="artifact">
-                <img src="../assets/images/asah/asah-old-home.png" alt="The original mentor — greets you, then hands you loan tips and a planning checklist." style="width:100%;height:auto">
-                <figcaption class="case-figure-caption">The original mentor — greets you, then hands you loan tips and a planning checklist.</figcaption>
+                <img src="../assets/images/asah/asah-old-home.png" alt="The original mentor — greets you, then opens into idea validation, contract review, and a roadmap of what's next." style="width:100%;height:auto">
+                <figcaption class="case-figure-caption">The original mentor — greets you, then opens into idea validation, contract review, and a roadmap of what's next.</figcaption>
               </figure>
               <figure class="artifact">
                 <img src="../assets/images/asah/asah-hero.png" alt="The new manager — same greeting, but it answers as someone you can talk to." style="width:100%;height:auto">
@@ -173,6 +173,16 @@
         <div class="decision">
           <span class="d-num">02</span>
           <div>
+            <h3>The roadmap became a behavior, not a screen</h3>
+            <p>The hackathon version had an explicit roadmap: a checklist a founder could see and step through — idea validation, business planning, legal setup, MVP development, launch. It came from a real gap: founders kept saying that once a business was actually running, they didn't know what to do next (see Research). Idea-stage guidance is everywhere; after launch, it dries up.</p>
+            <p>That screen didn't survive the pivot, but the instinct behind it did. Instead of one fixed checklist every founder walks through the same way, the job moved into the manager itself: agents plan against a founder's actual goals and tell them what's next, tailored to where that specific business is — not a generic five-step list rendered the same for everyone.</p>
+            <p>The tradeoff: a checklist is scannable at a glance in a way a conversation isn't. We decided personalized was worth more than skimmable — the same call as Decision 04, just applied to planning instead of agent setup.</p>
+          </div>
+        </div>
+
+        <div class="decision">
+          <span class="d-num">03</span>
+          <div>
             <h3>A manager you don't have to manage</h3>
             <p>The hardest part of "just use AI agents" is usually the user. Agents are powerful, but configuring them, prompting them, and keeping track of them is its own skill — and our users, by definition, don't have it.</p>
             <p>So we made supervision Asah's job, not the user's. The user hires agents; Asah monitors and coordinates them. The interface is beginner-friendly on purpose: someone who has never touched an AI agent should be able to put quality agents to work without seeing a single line of configuration or code.</p>
@@ -180,7 +190,7 @@
         </div>
 
         <div class="decision">
-          <span class="d-num">03</span>
+          <span class="d-num">04</span>
           <div>
             <h3>Agents as characters</h3>
             <p>If we described an AI agent the way it actually is — a prompt, a tool list, a configuration — most of our users wouldn't know what to do with it. They aren't AI users. They're founders.</p>
@@ -195,6 +205,32 @@
   <section class="wrap case-section">
     <div class="case-section-head">
       <span class="num">06</span>
+      <h2>How it <em>works</em></h2>
+    </div>
+    <div class="case-body">
+      <p>The beginner-friendly interface in the sections above is the visible half of Decision 02. This is the half underneath it — the system that has to actually absorb the complexity for the UI to get away with hiding it. What's below describes the current web build, which has moved on from the version we submitted to the hackathon in Decision 01.</p>
+      <p><strong>One contract, swappable engines.</strong> The app doesn't talk to agents directly — it talks to a single interface, <code>AgentRuntime</code>: send a request, get back an output with a status of <code>ok</code>, <code>uncertain</code>, or <code>error</code>, plus the sources an agent found its answer from. Whichever real backend is actually answering gets swapped in behind that one interface. Until an engine is plugged in, the default implementation returns an error instead of a made-up answer — the "don't guess" rule from Decision 02 isn't just house style here, it's the type the code compiles against.</p>
+      <p><strong>Real backends, not mocks, for three agents.</strong> An Email agent (behind Google OAuth), a Research agent, and an SDR agent each run as their own Python (FastAPI) service, and each is reached through one file that owns every request and response mapping for that agent — so a backend change touches one seam, not the app. Getting an agent this far — a working auth flow, a real HTTP contract, a UI that survives a slow or failed response instead of just hanging — turned out to be most of the actual engineering, more than the chat surface itself.</p>
+      <p><strong>What "uncertain" looks like in the product:</strong> the Research agent makes this literal. Every claim in a report carries a confidence label (high / medium / low / unverified) and stays collapsed behind its own citations until a user opens it — trustworthy enough to read at a glance, the receipts one click under it if you want them. That progressive-disclosure shape is "warm but credible" (Decision 02) built into a data schema, not just a chat tone.</p>
+      <p><strong>A constraint that reshaped the interface:</strong> Research reports cost real money per request — several model calls per report — and can take anywhere from seconds to a couple of minutes to come back. That's why every request in the app is cancelable mid-flight instead of trapping the user behind a spinner they can't back out of. The backend's cost shaped a piece of the frontend contract.</p>
+      <p><strong>Supervision, made visible:</strong> a running activity log records only real agent executions — never the seed/demo agents — each with what it did and a one-line result ("3 leads from 20 reviewed"), and a link back to where it happened. It's the closest thing on the page to watching the manager actually manage.</p>
+      <p><strong>RAG — where it stands, honestly:</strong> the knowledge layer is being rebuilt right now — Postgres with pgvector, documents chunked and embedded, retrieved before an agent answers — and it isn't finished. An earlier version of Asah, the one built for the hackathon, had a working version of exactly this, built for a different job: scanning a founder's uploaded contracts and legal documents for risk. Documents were chunked at 1,000 characters with a 200-character overlap, embedded with Amazon Titan Text Embeddings V2, searched with FAISS, answered by Amazon Nova, and cited by source in the response — with a jurisdiction-rules database as a fallback so a search that came up empty still returned something grounded instead of nothing. That's the bar the current rebuild is aimed at, not a hypothetical.</p>
+      <p><strong>What isn't built yet:</strong> the verification loop "Asah supervises agents" implies — one agent's output getting checked before a user sees it. The contract has room for it (that's what the <code>uncertain</code> status is for), but nothing assigns it automatically today. That gap is real, and it's what Reflection points at under "what's next."</p>
+      <p>One small detail from the design side, because it's mine directly: in the Research agent's report cards, every number inside a claim gets pulled out and set in the brand color, so scanning a paragraph gets you the scale of a finding without reading every sentence — and each claim carries a small confidence-colored dot ahead of its text, so a low-confidence claim is flagged before you've read it, not labeled after. Small, but it's the same "warm but credible" rule from Decision 02, applied to a data table instead of a chat bubble.</p>
+      <p><strong>Stack:</strong> Vite + React + TypeScript on the frontend; Python (FastAPI) for the agent backends; storage moving from local-only to Supabase (Postgres with row-level security, plus pgvector for the RAG rebuild above).</p>
+      <!-- TODO(Kelly): drop a system diagram at the exact path below, then uncomment
+           this figure to bring it into the page. See CASE-STUDY-TODO.md.
+      <figure class="case-image-figure">
+        <img src="../assets/images/asah/asah-system-diagram.png" alt="How a request moves through Asah: user → manager (AgentRuntime) → agent backend → back through the manager." style="width:100%;height:auto">
+        <figcaption class="case-figure-caption">How a request moves through Asah — the manager stays in the loop on both ends.</figcaption>
+      </figure>
+      -->
+    </div>
+  </section>
+
+  <section class="wrap case-section">
+    <div class="case-section-head">
+      <span class="num">07</span>
       <h2>The <em>design</em></h2>
     </div>
     <div class="case-body is-wide">
@@ -266,7 +302,7 @@
 
   <section class="wrap case-section">
     <div class="case-section-head">
-      <span class="num">07</span>
+      <span class="num">08</span>
       <h2><em>Outcome</em></h2>
     </div>
     <div class="case-body">
@@ -277,7 +313,7 @@
 
   <section class="wrap case-section">
     <div class="case-section-head">
-      <span class="num">08</span>
+      <span class="num">09</span>
       <h2><em>Reflection</em></h2>
     </div>
     <div class="case-body">
@@ -285,6 +321,7 @@
       <p><strong>What was hardest.</strong> Connecting the backend to the frontend. This was my first time doing backend at all — getting the API keys set up, building the RAG architecture from scratch, and getting Amazon Nova to actually return the right kind of response were all new to me, and the seams between systems were where the hard parts lived. I leaned on AI-assisted coding heavily, but the design of what to ask for, and the responsibility for whether the answer was right, was mine.</p>
       <p><strong>What I'd do differently.</strong> The Office space — where the user sees their hired agents — works, but it could feel more like an actual 2D office. I'd push the characters further: have them visibly <em>doing</em> the work, not just standing there. The metaphor we chose was the right one; I'd just commit to it harder.</p>
       <p><strong>What's next.</strong> Finishing the idea and finishing the backend, so Asah works end to end and not just on the design side. The web version is the home; the mobile version comes after.</p>
+      <p><strong>Why this problem.</strong> <span class="inline-note">[Kelly: beyond starting at the hackathon — is there a personal reason this problem stuck? Watched a founder you know drown in ops, tried to run something yourself, anything. This is the one thing missing that turns "we built an AI tool" into a story an interviewer remembers — even a sentence is enough.]</span></p>
     </div>
   </section>
 
