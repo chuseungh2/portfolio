@@ -176,18 +176,6 @@ nothing to save them from. Save each at the exact path and uncomment the matchin
 
 ## Structural note (for me, not you)
 
-Health U and Scrim share the 8-section shape:
-`01 Context & problem · 02 My role · 03 Research · 04 Goal · 05 ★ Decisions & tradeoffs ·
-06 The design · 07 Outcome · 08 Reflection`. Asah is now **9 sections** — it has an extra
-`06 How it works` between Decisions and The design (technical detail on the RAG + multi-agent
-system, added because that's the part of the project that's actually Kelly's own build), which
-pushes its own Outcome/Reflection to `08`/`09`. Any future case study should start from the
-8-section shape; add the 9th `How it works` section only if there's real backend/technical work
-of its own to explain — a design-only project shouldn't get one.
-
-Performing Wellness keeps the top-level 8-section shape too, but `06` is unusually dense: four
-lettered sub-sections — `6a` sticky-note synthesis (seven named themes) → `6b` the Ideal
-Experience Framework → `6c` six opportunity areas → `6d` designing the book itself. None of the
-other four case studies have this many things happening under one numbered section, because none
-of them have three distinct synthesis artifacts plus a physical deliverable design to cover. If a
-future research-only project needs this shape again, `06` here is the template.
+The 8-section shape all four case studies share, why it's that shape, and when a page is allowed
+to deviate from it (Asah's 9th section, Performing Wellness's lettered `06`) now live in
+**`docs/case-study-structure.md`** — read that before adding or restructuring a case study.
