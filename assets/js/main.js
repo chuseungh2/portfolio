@@ -17,7 +17,9 @@
     'home':     { layers: 4, amp: [14, 38], freq: [2.5, 3.1] },
     'asah':     { layers: 3, amp: [10, 24], freq: [3.4, 4.2] }, // tight, systematic
     'health-u': { layers: 3, amp: [20, 34], freq: [1.5, 2.1] }, // calm, long waves
-    'scrim':    { layers: 5, amp: [12, 30], freq: [2.8, 3.8] }  // energetic, layered
+    'scrim':    { layers: 5, amp: [12, 30], freq: [2.8, 3.8] }, // energetic, layered
+    'performing-wellness': { layers: 4, amp: [16, 28], freq: [2.0, 2.6] }, // measured, editorial
+    'todays-stock':        { layers: 2, amp: [8, 18],  freq: [2.2, 2.8] }  // spare, one voice
   };
 
   function buildMarkSVG(presetKey) {
@@ -195,7 +197,7 @@
     }
 
     document.querySelectorAll('a.work-row').forEach(row => {
-      const m = row.getAttribute('href').match(/(asah|health-u|scrim)/);
+      const m = row.getAttribute('href').match(/(asah|health-u|scrim|performing-wellness|todays-stock)/);
       if (!m) return;
       const key = m[1];
 
