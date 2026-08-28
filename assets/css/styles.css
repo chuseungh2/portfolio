@@ -1515,7 +1515,12 @@ figure.is-portrait { max-width: 420px; }
   .nav-inner { padding: 14px var(--gutter); }
   .nav-mark { font-size: 15px; }
   .nav-mark .back { display: block; margin: 0 0 2px; font-size: 9px; }
-  .hero h1 { font-size: clamp(46px, 12vw, 68px); }
+  /* "multidisciplinary" is a 17-character word, and the ch-based max-width above
+     scales with the type, so shrinking the size alone never changes where it wraps.
+     On a phone the gutter is already the line-length control: let the headline use
+     it, and size it so "A multidisciplinary" holds one line instead of stranding
+     the "A" on its own. */
+  .hero h1 { font-size: clamp(34px, 10.8vw, 68px); max-width: 100%; }
   .hero-note { letter-spacing: .12em; }
   .hero-mark { height: 92px; }
   .row-meta { gap: 8px; flex-wrap: wrap; }
