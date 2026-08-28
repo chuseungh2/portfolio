@@ -14,7 +14,52 @@ nothing gets lost in view-source. (Earlier there was a real bug where a duplicat
 rule made all of these visible to site visitors — that's fixed. If you ever want to see the notes
 while drafting, flip that one rule to `display: inline`.)
 
-**Current count: 25 notes** — home 1 · asah 3 · health-u 2 · scrim 3 · performing-wellness 10 · todays-stock 6.
+**Current count: 23 notes** — home 1 · asah 3 · health-u 1 · scrim 2 · performing-wellness 10 · todays-stock 6.
+
+---
+
+## 2026-08-28 — CORRECTION: the cultural probe was never fielded
+
+**This was the most serious factual problem the site has had.** Kelly confirmed the *Post vs.
+Reality* cultural probe was **designed but never run**. The page had been describing it in the
+past tense throughout, as one of five methods that produced data. Worst of all, `08 Reflection`
+claimed: *"The 70% 'gap between my real life and the vibe I post' finding only holds up because it
+came from people's own paired photographs."* Those photographs do not exist. One interview
+question — "can I see the paired photos?" — would have collapsed it.
+
+Corrected in nine places:
+
+| Where | Was | Now |
+|---|---|---|
+| Meta strip `Methods` | "…cultural probes…" listed among executed methods | "…plus a cultural probe designed but not fielded" |
+| Snapshot outcome | "A **five-method** study across 40 interviews, surveys, and cultural probes" | "A mixed-methods study across 40 interviews, surveys, and content analysis" |
+| `03 Research` intro | "Five methods, each doing a job…" | "Four methods in the field and a fifth on paper…" |
+| `03 Research` probe para | past tense, "asked participants to capture…" | designed to; "written up in full and never fielded. Nothing in the findings below rests on it" |
+| `04 Goal` | "why the cultural probes and the content analysis exist" | "why the content analysis exists, and why the probe got designed even though it never ran" |
+| Decision 03 body | "The cultural probe **we ran**… participants captured…" | "The cultural probe **we designed**… a participant *would* capture…" |
+| Decision 03 "what that buys" | "What that buys is…" (observed) | "What that **would** buy is…" (conditional) |
+| Decision 03 tradeoff | "Compliance is never complete: some people log diligently, some send one pair and stop" — implied real compliance data | reframed: "It never went to participants — the plan is where it stopped… designing the right instrument and fielding it are two different accomplishments, and this project only has the first" |
+| `08 Reflection` | the paired-photographs claim above | "What I can't claim is that the probe carried any of it… the 70% finding rests on what people described in interviews, not on paired photographs" |
+
+Also: the probe-plan figure caption now ends "This document is as far as it got — it was never
+fielded," and the moot `[Kelly: how did probe compliance go?]` note was deleted.
+
+**One new note added, deliberately:** Decision 03 asks *why* the probe wasn't fielded (time, scope,
+professor's call, consent?). A first pass at this correction invented "the quarter ran out" as the
+reason — that was removed. Kelly said only that it wasn't run, not why.
+
+## 2026-08-28 — Scrim and Health U: both are hi-fi Figma prototypes
+
+Kelly confirmed she built both prototypes and did the interaction linking herself, and both are
+hi-fi (not wireframes, despite the Scrim file being named "Scrim Wireframe").
+
+- **Scrim** `Status`: "Course project" → "Course project — hi-fi Figma prototype, not a coded app."
+  Resolves the long-standing ambiguity in "most of the build." `My role` and the `02` body copy
+  both dropped "most of the build itself" in favour of "the screens and the interaction linking
+  that makes it clickable are both mine" — accurate, and it survives the follow-up question
+  "so did you code it?"
+- **Health U** `Status`: "design and demo only, never built" → "hi-fi Figma prototype, never
+  built." Resolves the note asking whether anything was prototyped beyond the Figma designs.
 
 ---
 
