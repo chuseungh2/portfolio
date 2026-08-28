@@ -80,6 +80,35 @@ Kelly asked for more of the book's interior and a way to read the whole thing.
 
 ---
 
+## 2026-08-28 — CORRECTION 2: "behavioral & interaction analysis" was not a separate method
+
+Kelly shared the original research-aim statement from the proposal. It names **three** methods:
+content and visual analysis of wellness posts, surveying, and interviewing. The site's `03 Research`
+was listing a fourth executed method, *Behavioral & interaction analysis* ("examined what users do
+with the content once they've seen it: whether a saved routine becomes a routine, or just a save").
+Kelly confirmed that was **asked inside the interviews and surveys, not run as a separate
+analysis** — the same class of overstatement as the probe.
+
+Fixed:
+- The standalone `Behavioral & interaction analysis` paragraph is deleted.
+- Its substance moved into the Surveys paragraph, worded so it does not pick an instrument Kelly
+  didn't name: "was asked here and in the interviews rather than observed separately." A first pass
+  attributed it to surveys alone; that invented specificity and was corrected.
+- The method count line goes from "Four methods in the field and a fifth on paper" to
+  **"Three methods in the field and a fourth on paper."** (Secondary research is framed separately,
+  as sitting underneath all of it, so it isn't in the count.)
+- The meta strip's `Methods` row already listed only the three plus the unfielded probe, so it
+  needed no change.
+
+**Not changed, by Kelly's call: the framing of the research question.** The proposal is directional
+— *"examine **how** Gen Z performs wellness"* and *"**We will challenge** the authenticity of
+digital wellness culture"* — while the site presents an open question ("Is wellness something this
+generation practices, or something it performs?"). The site does already admit a prior position in
+two places ("a hunch about performative wellness"; "interrogate that assumption rather than
+illustrate it"), so it isn't hiding the stance. Kelly chose to leave the copy and prepare the
+answer verbally instead; the script lives in `docs/INTERVIEW-SCADASK-2026-08-28.md` under question
+6-a.
+
 ## 2026-08-28 — CORRECTION: the cultural probe was never fielded
 
 **This was the most serious factual problem the site has had.** Kelly confirmed the *Post vs.
@@ -343,7 +372,7 @@ Restore instructions are in an HTML comment at each spot in `index.html`:
 
 | Save as this exact path | Where it's used |
 |---|---|
-| `assets/images/kelly-portrait.jpg` | Home, About — the slot used to render an empty bordered box labelled `[ portrait placeholder ]`. |
+| `assets/images/seunghee-portrait.jpg` | Home, About — the slot used to render an empty bordered box labelled `[ portrait placeholder ]`. |
 | ~~`assets/images/parents-gpt/`~~ | **Resolved 2026-08-28 — no longer needed.** The Parents' GPT teaser it belonged to is gone; the project shipped and became the full case at `/todays-stock/`, which deliberately has no images (see `CLAUDE.md`). |
 
 ### The Rhino playground card has nothing behind it
