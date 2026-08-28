@@ -14,7 +14,26 @@ nothing gets lost in view-source. (Earlier there was a real bug where a duplicat
 rule made all of these visible to site visitors — that's fixed. If you ever want to see the notes
 while drafting, flip that one rule to `display: inline`.)
 
-**Current count: 30 notes** — home 3 · asah 3 · health-u 2 · scrim 3 · performing-wellness 13 · todays-stock 6.
+**Current count: 28 notes** — home 1 · asah 3 · health-u 2 · scrim 3 · performing-wellness 13 · todays-stock 6.
+
+---
+
+## 2026-08-28 (later) — home page: city, graduation, PW tag
+
+Ahead of a SCADask Research Assistant interview, Kelly confirmed two more facts and both are now
+in the copy (`content-home.md` updated first, then `index.html`, per the copy rule):
+
+1. **City = Savannah.** Hero sub-line now reads "SCAD UX Design · Savannah." Resolved the
+   `[Kelly: city, if you want one]` note that lived there.
+2. **Graduation = May 2028.** About's `Now` row now reads "SCAD, UX Design — graduating May
+   2028." Resolved the `[Kelly: year if you want, otherwise leave it]` note. Degree type wasn't
+   given, so it isn't named — "graduating" only, nothing invented.
+3. **Performing Wellness's home-row tag rewritten** to surface method instead of team size —
+   "Research · Team of 4, interviews & book design" → "Research · 40 interviews, cultural
+   probes, 27-spread client book." Also backfilled into `content-home.md`, which previously
+   flagged this row as undocumented.
+4. **Still open, deprioritized by Kelly:** Performing Wellness's professor name and exact month
+   range (meta strip) — not worth chasing before the interview.
 
 ---
 
