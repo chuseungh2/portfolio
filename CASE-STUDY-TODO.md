@@ -465,8 +465,11 @@ v1.3 build package). No images — that's a decision the page argues for, not a 
 2. **Class name, professor, and start date** for the meta strip. Right now `Context` reads
    "AI 201, Project 3" and `Timeline` falls back to "Through May 2026".
 
-3. **Grade or evaluation**, if there's one worth citing in `07 Outcome` — Scrim names its 95/100
-   there and it lands.
+3. ~~**Grade or evaluation** for `07 Outcome`.~~ **Closed 2026-08-28 — no grades on the site.**
+   Kelly's call: a grade frames the work as an assignment done for a mark rather than a project,
+   and every case's meta strip already says it was coursework. Scrim's "finished with an A" line
+   was removed at the same time; what a critique actually singled out still belongs there, the
+   mark doesn't. Don't reopen this for any case.
 
 4. **The third conversation starter** names one of your mom's real holdings in the shipped GPT;
    the page shows `[종목]` instead, per the privacy call. Confirm, or give a phrasing you prefer.
