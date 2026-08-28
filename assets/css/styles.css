@@ -247,19 +247,25 @@ body::before {
   height: 120px;
   opacity: .9;
 }
+/* Display type, the three headings set at 100px and up.
+   Fraunces carries an optical-size axis, and left on auto the browser pushes
+   `opsz` toward its 144 maximum at these sizes, which thins the strokes to
+   hairlines. Combined with weight 300 the result was genuinely hard to read.
+   Pin `opsz` to a text-weight value and set the weight to 400: same typeface,
+   same moodboard, strokes that hold. Keep these three in sync. */
 .hero h1 {
   font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(64px, 11vw, 168px);
-  line-height: .88;
-  letter-spacing: -.04em;
-  max-width: 14ch;
-  padding-left: .03em;
-}
-.hero h1 .feels {
-  font-style: italic;
   font-weight: 400;
-  color: var(--vermilion);
+  font-variation-settings: 'opsz' 20, 'wght' 400;
+  /* The headline sets its own lines with <br>, so the measure is governed by the
+     gutter, not a ch cap; a ch cap here only fought the explicit breaks. Sized so
+     the longest line, "with a designer's eye.", holds together at every width the
+     container reaches (it stops growing at --max, hence the px ceiling). */
+  font-size: clamp(64px, 8.6vw, 124px);
+  line-height: .88;
+  letter-spacing: -.025em;
+  max-width: 100%;
+  padding-left: .03em;
 }
 .hero h1 .dot { color: var(--vermilion); }
 .hero-note {
@@ -663,10 +669,11 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
 }
 .contact h2 {
   font-family: var(--serif);
-  font-weight: 300;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 20, 'wght' 400;
   font-size: clamp(56px, 9vw, 132px);
   line-height: .92;
-  letter-spacing: -.035em;
+  letter-spacing: -.025em;
   max-width: 14ch;
 }
 .contact h2 .feels { font-style: italic; color: var(--vermilion); font-weight: 400; }
@@ -718,10 +725,11 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
 }
 .case-hero h1 {
   font-family: var(--serif);
-  font-weight: 300;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 20, 'wght' 400;
   font-size: clamp(72px, 12vw, 180px);
   line-height: .9;
-  letter-spacing: -.04em;
+  letter-spacing: -.025em;
 }
 .case-hero .tagline {
   font-family: var(--serif);
@@ -1453,8 +1461,8 @@ figure.is-portrait { max-width: 420px; }
   /* hero */
   .hero { min-height: auto; padding: 60px var(--gutter) 80px; }
   .hero h1 {
-    font-size: clamp(54px, 11.5vw, 96px);
-    max-width: 12ch;
+    font-size: clamp(44px, 9.2vw, 92px);
+    max-width: 100%;
   }
 
   /* selected work */
@@ -1515,12 +1523,10 @@ figure.is-portrait { max-width: 420px; }
   .nav-inner { padding: 14px var(--gutter); }
   .nav-mark { font-size: 15px; }
   .nav-mark .back { display: block; margin: 0 0 2px; font-size: 9px; }
-  /* "multidisciplinary" is a 17-character word, and the ch-based max-width above
-     scales with the type, so shrinking the size alone never changes where it wraps.
-     On a phone the gutter is already the line-length control: let the headline use
-     it, and size it so "A multidisciplinary" holds one line instead of stranding
-     the "A" on its own. */
-  .hero h1 { font-size: clamp(34px, 10.8vw, 68px); max-width: 100%; }
+  /* On a phone there isn't room to hold every line, so the size is set by the
+     first one: "A multidisciplinary" must stay whole rather than stranding the
+     "A" by itself. The last line is allowed to wrap below it. */
+  .hero h1 { font-size: clamp(30px, 10vw, 68px); max-width: 100%; }
   .hero-note { letter-spacing: .12em; }
   .hero-mark { height: 92px; }
   .row-meta { gap: 8px; flex-wrap: wrap; }
