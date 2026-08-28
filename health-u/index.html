@@ -45,11 +45,12 @@
 <main id="main">
 
   <section class="wrap case-hero">
+    <div class="case-mark" aria-hidden="true" data-mark="health-u"></div>
     <p class="case-eyebrow">Case 02 / Mobile app</p>
     <h1>Health U</h1>
     <p class="tagline">Managing a chronic illness shouldn't feel like a full-time job.</p>
 
-    <figure class="case-hero-visual case-image-figure">
+    <figure class="case-hero-visual case-image-figure is-phone">
       <img width="786" height="1704" fetchpriority="high" decoding="async" src="../assets/images/health-u/healthu-dashboard.png" alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms." style="width:100%;height:auto">
       <figcaption class="case-figure-caption">The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms.</figcaption>
     </figure>
@@ -133,8 +134,7 @@
     </div>
     <div class="case-body">
       <p>There was no metric to hit — this was a course project, scoped to design and demo, not a shipped app with usage data. What it needed instead was a bar every screen had to clear.</p>
-      <p>The research had already set the terms: <em>"does this make her day easier, or harder?"</em> Every screen was tested against that question before it was tested against anything else. The three design principles the process crystallized into — Simplicity, Personalization, Clear Health Tracking — were the concrete form of that bar, and the final review measured against them, not against a number.</p>
-      <p><span class="inline-note">[Kelly: this is my read of your implicit success bar, built from your own Research and Process copy — confirm it's right or rewrite it. If a grade, rubric, or specific professor feedback exists, that's worth naming here too.]</span></p>
+      <p>The research had already set the terms: <em>"does this make her day easier, or harder?"</em> Every screen was tested against that question before it was tested against anything else. That bar mattered more here than it would in most projects, because the research also explained how health apps lose people in the first place: participants described them as more effort, more complexity, one more thing that adds stress — and several stayed away for exactly that reason, expecting an app to be complicated before they had even tried one. An app for managing a condition that adds to the managing has already lost. The three design principles the process crystallized into — Simplicity, Personalization, Clear Health Tracking — were the concrete form of that bar.</p>
     </div>
   </section>
 
@@ -170,7 +170,7 @@
             <p>This was the hardest balance to get right — I called it out in my reflection. Health U is friendly and human-centered on purpose: people managing chronic illness don't need another cold, clinical interface. But the moment a health app reads as <em>too</em> warm or too playful, trust drops, and so does compliance. A medication reminder you don't trust is a medication you don't take.</p>
             <p>So the design walks a line: warm visual system, plain conversational language from the assistant, no cute mascots. The AI is helpful, not chipper.</p>
             <div class="artifact-grid">
-              <figure class="artifact">
+              <figure class="artifact is-phone">
                 <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-ai-assistant.png" alt="It notices the headache you logged and opens the conversation — the remembering is the app's job." style="width:100%;height:auto">
                 <figcaption class="case-figure-caption">It notices the headache you logged and opens the conversation — the remembering is the app's job.</figcaption>
               </figure>
@@ -223,61 +223,61 @@
 
       <div class="screen-walkthrough">
         <div class="screen">
-          <figure class="screen-frame case-screen-figure">
+          <figure class="screen-frame case-screen-figure is-phone">
             <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-dashboard.png" alt="The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
-            <p class="num">01 / Dashboard</p>
+            <p class="num">01</p>
             <h4>Dashboard</h4>
             <p>The first thing you see is a calm summary, not a wall of data — taken 1 of 2, no new symptoms.</p>
           </div>
         </div>
         <div class="screen">
-          <figure class="screen-frame case-screen-figure">
+          <figure class="screen-frame case-screen-figure is-phone">
             <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-ai-assistant.png" alt="It notices the headache you logged and opens the conversation — the remembering is the app's job." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
-            <p class="num">02 / AI Health Assistant</p>
+            <p class="num">02</p>
             <h4>AI Health Assistant</h4>
             <p>It notices the headache you logged and opens the conversation — the remembering is the app's job.</p>
           </div>
         </div>
         <div class="screen">
-          <figure class="screen-frame case-screen-figure">
+          <figure class="screen-frame case-screen-figure is-phone">
             <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-medication.png" alt="Doses and reminders in one view, so a missed dose isn't one more thing to track." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
-            <p class="num">03 / Medication Management</p>
+            <p class="num">03</p>
             <h4>Medication Management</h4>
             <p>Doses and reminders in one view, so a missed dose isn't one more thing to track.</p>
           </div>
         </div>
         <div class="screen">
-          <figure class="screen-frame case-screen-figure">
+          <figure class="screen-frame case-screen-figure is-phone">
             <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-symptom.png" alt="Logging a symptom in a sentence — the invisible made visible, with severity in one tap." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
-            <p class="num">04 / Symptom Tracking</p>
+            <p class="num">04</p>
             <h4>Symptom Tracking</h4>
             <p>Logging a symptom in a sentence — the invisible made visible, with severity in one tap.</p>
           </div>
         </div>
         <div class="screen">
-          <figure class="screen-frame case-screen-figure">
+          <figure class="screen-frame case-screen-figure is-phone">
             <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-appointment.png" alt="Book in a couple of taps — the assistant carries the doctor and insurance details forward." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
-            <p class="num">05 / Appointment Scheduling</p>
+            <p class="num">05</p>
             <h4>Appointment Scheduling</h4>
             <p>Book in a couple of taps — the assistant carries the doctor and insurance details forward.</p>
           </div>
         </div>
         <div class="screen">
-          <figure class="screen-frame case-screen-figure">
+          <figure class="screen-frame case-screen-figure is-phone">
             <img width="786" height="1704" loading="lazy" decoding="async" src="../assets/images/health-u/healthu-past-results.png" alt="History you can actually read — CBC, Vitamin D, A1C, flagged when something needs a look." style="width:100%;height:auto">
           </figure>
           <div class="screen-caption">
-            <p class="num">06 / Past Results</p>
+            <p class="num">06</p>
             <h4>Past Results</h4>
             <p>History you can actually read — CBC, Vitamin D, A1C, flagged when something needs a look.</p>
           </div>
@@ -299,8 +299,9 @@
         <li>The <strong>simplified design</strong> stayed simplified all the way to the final visuals — that doesn't always survive a semester-long project.</li>
         <li>The <strong>dashboard</strong> reads as a calm summary, not a status-anxiety machine.</li>
       </ul>
-      <p>In review, classmates kept pointing to the same three things: that the design felt <strong>clean</strong>, that it carried <strong>only what was needed</strong>, and that <strong>everything on the screen was clear about what it was</strong> — no guessing what a control did. My professor's note was shorter: well done.</p>
+      <p>In review, classmates kept pointing to the same three things: that the design felt <strong>clean</strong>, that it carried <strong>only what was needed</strong>, and that <strong>everything on the screen was clear about what it was</strong> — no guessing what a control did. My professor called out the app itself and the features specifically, and the project finished with an <strong>A</strong>.</p>
       <p>Those weren't the boxes I'd been most worried about, which is partly why they're worth noting. The parts I'd tuned hardest — the AI assistant, the cognitive-load reductions — landed without anyone needing them pointed out.</p>
+      <p><span class="inline-note">[Kelly: worth naming which features the professor actually singled out, if you remember — that's a stronger sentence than the general one above.]</span></p>
     </div>
   </section>
 
