@@ -18,6 +18,29 @@ while drafting, flip that one rule to `display: inline`.)
 
 ---
 
+## 2026-08-28 — client book replaced with the credited version
+
+Kelly sent an updated `Client_Book_IDUS215.pdf`. Diffed it against the one already hosted; the
+changes are on four pages and they matter more than "added a name":
+
+- **p1 (cover)** now credits **GROUP 3 — Chanhwi, Seunghee, Diana, Bailee**. The old cover had no
+  credit at all.
+- **p2 and p3** drop the unreplaced template placeholders `BY AUTHOR` and the running header
+  `BOOK TITLE BY AUTHOR NAME`. These were flagged after the first upload; they're now gone.
+- **p6** fixes a garbled sentence: "As the first wellness differently generation to grow up
+  entirely alongside social media" → "As the first generation to grow up entirely alongside social
+  media, Gen Z…"
+
+Two site images are rendered from changed pages and were re-exported at their existing dimensions
+so no HTML changed: `pw-book-cover.png` (1120×1587, right page only) and
+`pw-secondary-research.png` (2240×1587).
+
+**The hosted PDF is now the original file, unmodified (19MB), not a re-compressed one.** The earlier
+6.2MB version was built by rasterising each page, which silently destroyed selectable text. For a
+research report that a reviewer might want to search or quote from, keeping the text layer is worth
+the extra megabytes; it is a click-to-open deliverable, not a render-blocking page asset. Verified
+after the swap: 27 pages, text extracts cleanly, zero placeholder hits.
+
 ## 2026-08-28 — em-dashes removed site-wide, and the client book is now hosted
 
 **Every em-dash is gone from the site: 322 of them, across all six pages** (PW 95, Today's Stock 62,
