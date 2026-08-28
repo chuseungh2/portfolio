@@ -140,19 +140,20 @@
         <span class="row-arrow">→</span>
       </a>
 
-      <div class="work-row is-soon" aria-disabled="true">
+      <a class="work-row" href="todays-stock/">
         <span class="row-num">05</span>
-        <div class="row-thumb tone-ink" data-label="Parents' GPT">
+        <div class="row-thumb tone-ink" data-label="Today's Stock">
           <span class="mock-chat"></span>
         </div>
         <div class="row-body">
-          <h3>Parents' GPT</h3>
-          <p class="row-tag">A personal AI, designed for the user I love most.</p>
+          <h3>Today's Stock</h3>
+          <p class="row-tag">She didn't need a new tool. She needed the one she already had to be set up for her.</p>
           <div class="row-meta">
-            <span class="pill pill-soon">In progress</span>
+            <span class="pill">Custom GPT · Solo, research &amp; conversation design</span>
           </div>
         </div>
-      </div>
+        <span class="row-arrow">→</span>
+      </a>
 
     </div>
   </section>
@@ -165,8 +166,13 @@
       </div>
     </div>
 
-    <div class="about-grid">
-      <div class="about-photo" aria-label="Portrait placeholder for Seunghee Chu"></div>
+    <div class="about-grid is-copy-only">
+      <!-- Portrait: an empty bordered box labelled "[ portrait placeholder ]" was rendering
+           here on the live site. Removed until there's a real photo. To restore, save the
+           portrait to assets/images/kelly-portrait.jpg, drop `is-copy-only` from .about-grid
+           above, and put this back as the first child:
+           <figure class="about-photo"><img src="assets/images/kelly-portrait.jpg" alt="Seunghee (Kelly) Chu"></figure>
+           See CASE-STUDY-TODO.md. -->
       <div class="about-body">
         <p>I'm a UX designer interested in making AI feel less like AI. The question I keep returning to — across an AI business manager, a chronic-illness assistant, and a workout-meetup app — is the same one: how do you make something <em>warm enough to use, but credible enough to trust?</em> I study UX Design at SCAD, and I tend to design and build in the same hour.</p>
 
@@ -207,36 +213,16 @@
         <span class="play-link">Live ↗</span>
       </a>
 
-      <a class="play-card" href="#playground" aria-disabled="true">
+      <!-- Not a link: the lightbox gallery isn't built and no Rhino images are in the repo
+           yet. This card used to be <a href="#playground">, which scrolled the visitor back
+           to the section they were already in. Restore the anchor once the gallery exists. -->
+      <div class="play-card is-soon">
         <span class="play-tag">03 / Rhino</span>
         <div>
           <h3>Models from the corner of my practice that's about hands and form.</h3>
           <p>A small gallery of Rhino 3D work — modeling for the pleasure of figuring out what a thing wants to be.</p>
         </div>
-        <span class="play-link">Gallery</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="wrap sec parents-teaser" id="parents-gpt">
-    <div class="sec-head">
-      <span class="sec-num">— In Progress</span>
-      <div>
-        <h2 class="sec-title">Parents' GPT <em>In Progress</em></h2>
-      </div>
-    </div>
-
-    <div class="teaser-grid">
-      <div class="artifact artifact-portrait">
-        <span class="caption">[Kelly: 1-2 early sketches or initial screens]</span>
-      </div>
-      <div class="teaser-copy">
-        <p>A personal AI assistant I'm building for my parents — the closest the <em>make AI feel human</em> question gets to my own life. The user I love most, and want least to confuse.</p>
-        <h3>Currently exploring</h3>
-        <ul>
-          <li>How much an AI assistant should <em>anticipate</em> vs. <em>ask</em>, when the user isn't fluent in AI.</li>
-          <li>What the interface looks like when there is no "prompt" — only a conversation that already started.</li>
-        </ul>
+        <span class="play-link">Gallery — coming soon</span>
       </div>
     </div>
   </section>

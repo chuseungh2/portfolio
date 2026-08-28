@@ -1,7 +1,11 @@
 # Case study TODOs
 
-Everything Kelly needs to fill in, hand off, or confirm across the three case-study pages.
+Everything Kelly needs to fill in, hand off, or confirm across the four case-study pages.
 Ordered by priority — top items matter most.
+
+> Unresolved **factual conflicts** (where two sources disagree and picking one would be
+> guessing) are not in this file — they're in **`docs/NEEDS_MY_VERIFICATION.md`** in the
+> project root, one entry each with the conflicting versions side by side.
 
 These also live in the HTML itself, as `<span class="inline-note">[Kelly: ...]</span>` right next
 to where they belong — that markup is hidden on the live site (`.inline-note { display: none; }`
@@ -10,7 +14,42 @@ nothing gets lost in view-source. (Earlier there was a real bug where a duplicat
 rule made all of these visible to site visitors — that's fixed. If you ever want to see the notes
 while drafting, flip that one rule to `display: inline`.)
 
-**Current count: 25 notes** — home 3 · asah 7 · health-u 2 · scrim 3 · performing-wellness 10.
+**Current count: 30 notes** — home 3 · asah 3 · health-u 2 · scrim 3 · performing-wellness 13 · todays-stock 6.
+
+---
+
+## 2026-08-28 — grades, client status, and a full stats audit
+
+Four things Kelly confirmed this round:
+
+1. **Scrim and Health U both got an A**, professor praised the app and the features. Written into
+   each `07 Outcome` — different sentences per case, not a copy-paste. Neither case names *which*
+   features got singled out (Kelly didn't say), so both sections carry a `.inline-note` asking —
+   naming them would be a stronger sentence than the general one there now.
+2. **Performing Wellness had no real external client** — "client" is this course's name for the
+   deliverable format, not a company that hired the team. Written into `01 Context` and `07
+   Outcome`; the "no client adopted a recommendation" line that was already there turned out to
+   be exactly right and didn't need to change.
+3. **Scrim's four unsourced statistics didn't hold up.** Checked each one against a web search:
+   three had no findable source, and the "almost half don't work out because they'd be alone"
+   figure ran opposite to what the one relevant survey (AARP, 2018) actually found — 70% of
+   exercisers there said they *prefer* working out solo. The "800 Instagram followers" quote
+   didn't turn up anywhere either. Replaced all four with verified, cited figures (CDC/NHIS 2024,
+   Cigna's 2020 Loneliness Index, AARP 2018) and folded the quote into the case's own narration
+   instead of attributing it to an unverifiable interviewee. Source-first: `content-scrim.md` was
+   updated before `scrim/index.html`, per the copy rule. Full before/after and sourcing are in
+   `docs/NEEDS_MY_VERIFICATION.md` #7.
+4. **Performing Wellness's statistics were checked too, but kept** — they're baked into
+   `pw-secondary-research.png`, the actual book spread displayed on the page, and the book itself
+   cites no institution for any of them. Changing the numbers would put the copy at odds with the
+   image sitting right next to it, so they stayed. Softened "Existing research told us" to "the
+   secondary research the team compiled," added three real figures from the same spread that
+   weren't being used (81% prefer honest content, 74% value transparency, 70% say breaks help),
+   and corrected one generation mismatch — "73% would pay more for sustainable products" is a
+   Nielsen 2015 *Millennials* figure, not Gen Z; now labeled correctly.
+
+Also: the persona-illustration question (AI-art faces vs. type-only vs. licensed stock) — Kelly's
+call was to leave the current illustration as-is for now. No site change from that one.
 
 ---
 
@@ -45,18 +84,58 @@ what happens when an agent is wrong, backend stack) are now written from the act
    founder's goals and surfacing what's next, instead of a fixed checklist. **Read Decision 02
    and confirm that's an accurate description of what the agents actually do** — I wrote it from
    your one-line description, not from seeing the current planning behavior directly.
-4. The commented-out before/after image caption in Decision 01 (the `asah-old-home.png` pair)
-   was rewritten to match — "opens into idea validation, contract review, and a roadmap of what's
-   next" instead of the vaguer "loan tips and a planning checklist." Still commented out pending
-   the actual image.
+4. The Decision 01 before/after is **resolved** as of 2026-08-28 — you exported the hackathon home
+   screen, it's saved at `assets/images/asah/asah-old-home.png`, and it's live in Decision 01 at
+   phone width. Rather than showing the new home a second time beside it, the caption points back
+   to the hero at the top of the page as the "after," which keeps the same image from appearing
+   twice on one page.
+
+### 2026-08-28 — Asah was restructured (see `../docs/ASAH_CONTENT_PLAN.md`)
+
+The editorial pass in that plan is now applied. Source of record is `../content-asah.md` (v3);
+the HTML follows it. What changed on the page:
+
+- **Prose 3,219 → ~2,600 words.** The pivot is told once (Decision 01) instead of four times;
+  `06 How it works` went 769 → ~430 words; `04 Goal` is one question instead of three paragraphs.
+- **Evidence moved next to the claim it backs.** Manage Team → Decision 03, Agent Hub → Decision 04,
+  Office → Reflection (beside "what I'd do differently," where it argues for the self-criticism
+  instead of against the caption it used to carry). `07 The design` went 6 screens → 3, and every
+  caption was rewritten so it says something the body copy doesn't.
+- **Two images resolved.** `asah-old-home.png` is in place (you exported it) and live in Decision 01
+  at phone width. `asah-system-diagram.png` was drawn for this pass and is live in `06`.
+- **Four `[Kelly: …]` notes closed** — the failure-rate figure and the competitor names were already
+  in `content-asah.md` and had just drifted out of the HTML, so they were restored rather than asked
+  for again; the "founders already pay for this" paragraph was deleted on your call; the old-home
+  image note is moot now the image exists.
+- **`asah-agent-detail.png` was recaptioned.** It's the marketplace *listing* (price, rating,
+  reviews) — not the trait profile its old caption promised. The real trait radar is a different
+  screen; see the table below.
+
+Two things still open on Asah, both images:
+
+| Capture this | Where it goes | How |
+|---|---|---|
+| `assets/images/asah/asah-agent-radar.png` | Decision 04, under the hiring grid | Run the app, Agent Hub → **View Details** on any agent. The panel that opens has the five-axis radar (Domain Expertise / Autonomy Level / Human Interaction / Data Dependency / Reasoning Complexity) beside the agent's quote. 2880×2048 like the others. **The figure is already written and commented out** — save the file and delete the two comment lines around it. |
+| `assets/images/asah/asah-research-report.png` | `06 How it works`, after the stack paragraph | Harder: needs the Research FastAPI backend running *and* a real report run, which costs money per run. Verified this can't be captured from the frontend alone. Same deal — figure written and commented out. |
 
 Still open:
-- A system diagram — save as `assets/images/asah/asah-system-diagram.png` and it'll appear
-  automatically (the figure is currently commented out).
-- The RAG paragraph describes the hackathon build's pipeline (chunking/Titan/FAISS) as a *past*
-  system and the current Supabase/pgvector layer as *in progress*. If the current build has since
-  gotten further than "in progress," this paragraph needs an update — I worked from your local
-  clone, last commit Aug 9.
+- **2026-08-27 re-check:** pulled `hwiOh-afk/New_Asah` again (now at commit `a0200a6`, a large
+  update — real Email/Research/SDR agent pages, a rewritten Manage Team/Office, `AgentRuntime`
+  with real backends). Spot-checked every claim in `06 How it works` against the new code:
+  `ok`/`uncertain`/`error` status, `high`/`medium`/`low`/`unverified` confidence labels,
+  cancelable requests, and the RAG/pgvector status (`BACKEND_PLAN.md` still has it at "Phase
+  1.5/2, not started" — `DATA_BACKEND` still defaults to `'local'`). **All of it still holds** —
+  no text changes needed there.
+- Also from that pass: the three broken/dummy Asah screenshots the audit flagged (hero's
+  triplicated example prompt, Manage Team's blank fields, Office's identical department stats)
+  turned out to already be fixed upstream. Re-captured all 7 Asah screenshots from the live
+  local build (logged in via its own dev demo account, no code touched — confirmed clean
+  `git status` before and after) at the same 2880×2048 the old ones were. Same filenames, so no
+  HTML changes beyond the three whose pixel dimensions changed
+  (`asah-manage-team.png`/`asah-calendar.png`/`asah-dashboard.png`, now 2048 tall instead of
+  2212/2212/2652 — `width`/`height` attributes updated to match) and the hero caption (rewritten
+  to match the new screen's actual text). See `docs/NEEDS_MY_VERIFICATION.md` #3 for the full
+  before/after.
 
 ### Scrim's Outcome section was half-empty — now partly reconstructed
 
@@ -69,19 +148,53 @@ right, and still tell me:
    seeing? (The project ran March–May 2026; it's August now, so this has almost certainly already
    happened.)
 
-### Four broken images
+**2026-08-27 correction:** the Before/After pair here was actually the same screen's pre-tap and
+post-tap states (Join Event → Joined), not the real too-quiet confirmation screen the testers
+saw — that screen was never exported. Recaptioned honestly ("before the tap" / "after the tap")
+instead of claiming it shows the fix in isolation, and left an `.inline-note` asking for the real
+pre-fix screen from Figma history if you want a true before/after. See
+`docs/NEEDS_MY_VERIFICATION.md` #4.
 
-Each of these is referenced in the HTML but the file has never existed in the repo, so the site
-is currently showing a broken image at that spot. Save each one at the **exact path** below and
-it'll appear automatically — no code changes needed on your end.
+### Scrim personas — restored to match `content-scrim.md` and the final deck
+
+`scrim/index.html` 03 Research had drifted to placeholder names (Jessica/Eric/Rosie) that never
+matched `content-scrim.md` (which already had Calming Carmen/Striking Stuart/Tiffany Tennis) or
+the persona card image. Restored from the source doc — 8 spots across Research, Goal, Decisions,
+and Reflection. One thing `content-scrim.md` has that the case study doesn't: **a Goal section**
+(`04 Goal`) isn't in the source doc at all — it was written into the HTML directly at some point.
+Worth adding to `content-scrim.md` so the two stay in sync, or confirming the HTML version is
+fine as the source of record for that one section.
+
+### Five missing images
+
+Each of these is referenced in the HTML but the file has never existed in the repo. **All five
+are commented out**, so nothing renders broken on the live site (verified — the site currently
+loads with zero image 404s). Save each one at the **exact path** below, then uncomment the
+matching `<figure>`; the restore instructions sit right next to each one in the HTML.
 
 | Save as this exact path | Where it's used |
 |---|---|
-| `assets/images/asah/asah-old-home.png` | Asah, Decision 01 — the pre-pivot hackathon home screen, for a before/after comparison. **Currently commented out of the page** so nothing looks broken; see the note in Decision 01 for how to bring it back. |
-| `assets/images/asah/asah-system-diagram.png` | Asah, section 06 How it works — a diagram of the request → manager (`AgentRuntime`) → agent backend → back through the manager loop. **Also commented out**; see above. |
+| `assets/images/asah/asah-agent-radar.png` | Asah, Decision 04 — the trait-radar panel behind "View Details" in the Agent Hub. See the 2026-08-28 Asah entry above for how to capture it. |
+| `assets/images/asah/asah-research-report.png` | Asah, section 06 How it works — a report card showing confidence labels and folded citations. Needs the Research backend running and a paid report run. |
 | `assets/images/health-u/healthu-appointment-autofill.png` | Health U, Decision 01 |
-| `assets/images/scrim/scrim-onboarding-1.png` | Scrim, section 06 The design |
-| `assets/images/scrim/scrim-onboarding-2.png` | Scrim, section 06 The design |
+| `assets/images/scrim/scrim-onboarding-1.png` | Scrim, section 06 The design. **The six live screens there are now numbered 01–06** (they used to start at 03, which read as a gap). When you restore these two, renumber the live six back to 03–08. |
+| `assets/images/scrim/scrim-onboarding-2.png` | Scrim, section 06 The design — same renumbering note as above. |
+
+### Two home-page images that were rendering as placeholder text
+
+Both were **visible to visitors** and have been removed rather than left as empty boxes.
+Restore instructions are in an HTML comment at each spot in `index.html`:
+
+| Save as this exact path | Where it's used |
+|---|---|
+| `assets/images/kelly-portrait.jpg` | Home, About — the slot used to render an empty bordered box labelled `[ portrait placeholder ]`. |
+| ~~`assets/images/parents-gpt/`~~ | **Resolved 2026-08-28 — no longer needed.** The Parents' GPT teaser it belonged to is gone; the project shipped and became the full case at `/todays-stock/`, which deliberately has no images (see `CLAUDE.md`). |
+
+### The Rhino playground card has nothing behind it
+
+`index.html`, Playground card 03. It used to be `<a href="#playground">` — a link back to the
+section the visitor was already in. It's now a non-interactive card reading "Gallery — coming
+soon." To make it real: add the Rhino renders and the lightbox, then restore the anchor.
 
 ---
 
@@ -108,6 +221,13 @@ Two more confirmations, both in meta strips (new `Status` row on Health U and Sc
 - **`scrim/index.html`** — I left this vague ("Course project") on purpose. Your own copy in
   My role says "...hi-fi prototype, most of the build" — I can't tell from that whether "build"
   means an actual coded app or a hi-fi Figma prototype. Tell me which and I'll write the real line.
+
+**2026-08-27, new:** `performing-wellness/index.html` section `6b` — you confirmed the study's
+scope stopped at three rings (Features/Benefits/Emotions) and never defined the diagram
+template's fourth ring (Sensory Cues), since this was a research-methods course, not a
+product-design one. I wrote that framing into the copy directly. **Read it and confirm the
+wording is right** — specifically whether "out of scope" is the accurate framing versus
+something closer to "didn't get to it." If it's the latter, tell me and I'll adjust.
 
 ---
 
@@ -167,10 +287,51 @@ nothing to save them from. Save each at the exact path and uncomment the matchin
 - **Asah** — show it to 3-5 real founders and write down one thing that changed because of it.
   This is the single item the source article calls the real differentiator — a test-and-iterate
   loop, even informal, over "friends said it looked good."
-- **Health U** — a grade, rubric note, or specific professor comment beyond "well done," if one
-  exists — Outcome currently only has classmate reactions.
 - **All three** — once any of these has real usage, the qualitative Goal/Impact language should
   get replaced with an actual measurable bar (activation rate, retention, completion rate, etc.).
+
+---
+
+## New: Today's Stock (Case 05) — added 2026-08-28
+
+Replaced the disabled "Parents' GPT" placeholder row. Copy source: `../content-todays-stock.md`
+(drafted from the project repo `github.com/chuseungh2/todays-stock`, including the preserved
+v1.3 build package). No images — that's a decision the page argues for, not a gap; don't fill it.
+
+### Open questions, in priority order
+
+1. **Your own repo's docs now contradict this page, and the page is right.**
+   `User_Testing_Evidence.md` and `Post_Mortem.md` both stop at v1.2 and describe the price-band
+   request as unresolved. You confirmed the final KakaoTalk feedback is **v1.3's** — meaning the
+   vocabulary reframing was tested and it worked. The repo is public and currently undersells its
+   own ending. Worth correcting there too.
+
+2. **Class name, professor, and start date** for the meta strip. Right now `Context` reads
+   "AI 201, Project 3" and `Timeline` falls back to "Through May 2026".
+
+3. **Grade or evaluation**, if there's one worth citing in `07 Outcome` — Scrim names its 95/100
+   there and it lands.
+
+4. **The third conversation starter** names one of your mom's real holdings in the shipped GPT;
+   the page shows `[종목]` instead, per the privacy call. Confirm, or give a phrasing you prefer.
+
+5. **A public version of the GPT with her holdings removed**, so the case can link something a
+   reviewer can actually use. This is the one thing that would give an image-less case a live
+   demo. Build task on your side.
+
+6. **Two re-interview quotes** in your research notes are marked paraphrased rather than verbatim.
+   They are deliberately not quoted anywhere on the page. Exact wording would strengthen `03`.
+
+7. **One transcription call:** her message reads 브리핑해주큰 in the screenshot; the repo
+   transcribes it 브리핑해주는. The page currently uses the repo's version. Your research doc's own
+   rule says preserve awkward phrasing as-is — say which you want.
+
+### Privacy decisions already applied (don't undo these)
+
+- Her specific holdings and the exact purchase price are **out** of the case entirely.
+- Her phone photo and the raw KakaoTalk screenshots are **not used**. Her quotes are typeset —
+  English translation as the quote, Korean original beneath it as provenance.
+- The Marketing Minute video is **removed from the portfolio** (it's still in the repo).
 
 ---
 

@@ -544,16 +544,14 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
   border: 1px solid var(--grid-strong);
   position: relative;
 }
-.about-photo::after {
-  content: "[ portrait placeholder ]";
-  position: absolute;
-  inset: 0;
-  display: grid; place-items: center;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .2em;
-  color: var(--stone);
-}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* The "[ portrait placeholder ]" label that used to live in .about-photo::after was
+   rendering to visitors on the live site. Removed with the empty box in index.html;
+   see the restore comment there. */
+
+/* one-column variants, used while a figure slot is waiting on an asset */
+.about-grid.is-copy-only,
+.teaser-grid.is-copy-only { grid-template-columns: minmax(0, var(--read)); }
 .about-body p {
   font-family: var(--serif);
   font-style: italic;
@@ -620,6 +618,10 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
   overflow: hidden;
 }
 .play-card:hover { transform: translateY(-6px); }
+/* a play-card with nothing to open yet — no link, so no hover lift and no link affordance */
+.play-card.is-soon { opacity: .78; }
+.play-card.is-soon:hover { transform: none; cursor: default; }
+.play-card.is-soon .play-link { border-bottom: 0; color: var(--stone); }
 .play-card .play-tag {
   font-family: var(--mono);
   font-size: 9px;
@@ -998,6 +1000,17 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
 .case-note {
   max-width: var(--read);
 }
+/* Attribution for a statistic, set quietly right after the claim it backs.
+   Small and grey on purpose: a reviewer should be able to check the source
+   without the citation competing with the finding it belongs to. */
+.case-source {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--stone);
+}
 .case-subhead {
   font-family: var(--serif);
   font-weight: 400;
@@ -1156,6 +1169,16 @@ figure.artifact img,
   width: 100%;
   height: auto;
 }
+/* Phone screenshots (portrait exports, ~786x1704) were rendering at full column width,
+   which made a single screen three viewport-heights tall. Cap them at a phone-ish size
+   and let the caption keep the rest of the measure. Tag: `is-phone` on the <figure>. */
+/* A screenshot inside a decision is evidence for the argument it sits under, not a
+   hero image — cap it so one screen doesn't push the next decision a viewport away. */
+.decision figure.case-image-figure { max-width: 760px; }
+figure.is-phone { max-width: 340px; }
+figure.case-hero-visual.is-phone { max-width: 400px; }
+/* Same problem, different source: a single book page is portrait too. */
+figure.is-portrait { max-width: 420px; }
 .case-figure-caption {
   border-top: 1px solid var(--grid);
   padding: 12px 14px 14px;
@@ -1246,6 +1269,129 @@ figure.artifact img,
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+/* =========================================================
+   Today's Stock — typeset artifacts
+   This case has no exported screens (the project deliberately
+   shipped no interface), so its "images" are typeset: a
+   forbidden/permitted vocabulary table, monospace spec blocks
+   for the prompt strings, and a numbered answer-shape list.
+   ========================================================= */
+
+/* forbidden / permitted vocabulary comparison (05 Decisions) */
+.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0 8px;
+  text-align: left;
+}
+.vocab-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--stone);
+  border-bottom: 1px solid var(--ink);
+  padding: 0 24px 10px 0;
+  vertical-align: bottom;
+  width: 50%;
+}
+.vocab-table th.is-forbidden { color: var(--vermilion); }
+.vocab-table td {
+  border-bottom: 1px solid var(--grid);
+  padding: 16px 24px 16px 0;
+  vertical-align: top;
+}
+.vocab-table th:last-child,
+.vocab-table td:last-child { padding-right: 0; }
+.vocab-table .ko {
+  display: block;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.vocab-table .en {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--stone);
+}
+.vocab-table td.is-forbidden .ko {
+  color: var(--stone);
+  text-decoration: line-through;
+  text-decoration-color: var(--vermilion);
+  text-decoration-thickness: 1px;
+}
+
+/* monospace spec block — prompt strings, conversation starters */
+.spec-block {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--ink);
+  background: rgba(140, 130, 117, .07);
+  border-left: 2px solid var(--vermilion);
+  padding: 20px 22px;
+  margin: 24px 0 12px;
+  max-width: var(--read);
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+.spec-gloss {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--stone);
+  max-width: var(--read);
+  margin: 0 0 24px;
+}
+
+/* the five-beat answer shape (06 The design) */
+.answer-steps {
+  list-style: none;
+  counter-reset: beat;
+  margin: 24px 0;
+  padding: 0;
+  max-width: var(--read);
+  border-top: 1px solid var(--grid);
+}
+.answer-steps li {
+  counter-increment: beat;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--grid);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.answer-steps li::before {
+  content: counter(beat, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: var(--vermilion);
+}
+
+/* bilingual quote — translation reads, original underneath as provenance */
+.case-body blockquote.is-bilingual {
+  max-width: 44ch;
+  font-size: 21px;
+}
+.case-body blockquote.is-bilingual .ko-original {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--stone);
+  margin-top: 14px;
+}
+
 @media (max-width: 960px) {
   :root { --gutter: 32px; }
 
@@ -1330,6 +1476,8 @@ figure.artifact img,
   .case-next .next-thumb { display: none; }
   .teaser-grid { grid-template-columns: 1fr; gap: 28px; }
   .artifact-portrait { max-width: 320px; }
+  .answer-steps li { grid-template-columns: 34px 1fr; gap: 12px; }
+  .case-body blockquote.is-bilingual { max-width: none; font-size: 19px; }
 }
 
 @media (max-width: 480px) {
@@ -1345,6 +1493,151 @@ figure.artifact img,
   figure.case-hero-visual { aspect-ratio: auto; padding: 0; }
   .visual-label { left: 14px; right: 14px; }
   .contact h2 { font-size: clamp(40px, 12vw, 64px); }
+
+  /* vocabulary table stacks into labelled cards — a 2-col comparison
+     of Korean phrases plus English glosses does not survive 390px */
+  .vocab-table,
+  .vocab-table tbody,
+  .vocab-table tr,
+  .vocab-table td { display: block; width: 100%; }
+  .vocab-table thead { display: none; }
+  .vocab-table tr {
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+  .vocab-table td { border-bottom: 0; padding: 12px 0 0; }
+  .vocab-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 6px;
+  }
+  .vocab-table td.is-forbidden::before { color: var(--vermilion); }
+  .spec-block { font-size: 12px; padding: 16px 16px; }
+}
+
+/* =========================================================
+   living details — ink interactions
+   (landing / nav / transitions only; case body stays calm)
+   ========================================================= */
+
+/* hand-drawn hover underline (nav) */
+.nav-links a {
+  padding-bottom: 3px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5 Q12 2 25 4.5 T50 4 T75 5 T99 3.5' fill='none' stroke='%23D14829' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 5px;
+  transition: color .2s, background-size .35s ease;
+}
+.nav-links a:hover { background-size: 100% 5px; }
+
+/* generative case mark (case hero signature) */
+.case-mark {
+  height: 56px;
+  max-width: 300px;
+  margin: 0 0 20px;
+}
+
+/* click ink splatter */
+.ink-splat {
+  position: fixed;
+  border-radius: 50%;
+  background: var(--vermilion);
+  pointer-events: none;
+  z-index: 9997;
+  mix-blend-mode: multiply;
+}
+
+/* work-row hover preview — floating ink signature card */
+.work-preview {
+  position: fixed;
+  top: 0; left: 0;
+  width: 220px;
+  height: 84px;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 5px 5px 0 rgba(22, 22, 22, .12);
+  pointer-events: none;
+  z-index: 9996;
+  opacity: 0;
+  transform: translate(20px, 20px) rotate(-1.2deg);
+  transition: opacity .25s ease;
+}
+.work-preview.is-visible { opacity: 1; }
+@media not all and (hover: hover) {
+  .work-preview, .ink-splat { display: none; }
+}
+
+/* page transition — ink wipe */
+.page-wipe {
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  z-index: 10001;
+  transform: translateY(102%);
+  pointer-events: none;
+  visibility: hidden;
+}
+.page-wipe.is-in,
+.page-wipe.is-out { visibility: visible; }
+.page-wipe::before,
+.page-wipe::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 26px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 26' preserveAspectRatio='none'%3E%3Cpath d='M0 26 L0 14 Q15 4 30 12 T60 9 T90 14 T120 10 L120 26 Z' fill='%23161616'/%3E%3C/svg%3E") repeat-x;
+  background-size: 120px 26px;
+}
+.page-wipe::before { bottom: 100%; }
+.page-wipe::after  { top: 100%; transform: scaleY(-1); }
+.page-wipe.is-in {
+  transition: transform .34s cubic-bezier(.65, 0, .35, 1);
+  transform: translateY(0);
+}
+.page-wipe.is-out { transform: translateY(0); }
+.page-wipe.is-out.is-leaving {
+  transition: transform .42s cubic-bezier(.65, 0, .35, 1);
+  transform: translateY(-102%);
+}
+
+/* reading progress rule (case pages) */
+.read-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--vermilion);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 10000;
+  pointer-events: none;
+}
+
+/* section heads — ink fade-in on scroll (JS adds .js-reveal) */
+.js-reveal .sec-head,
+.js-reveal .case-section-head {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(3px);
+  transition: opacity .7s ease, transform .7s ease, filter .7s ease;
+}
+.js-reveal .sec-head.is-inview,
+.js-reveal .case-section-head.is-inview {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+@media (max-width: 480px) {
+  .case-mark { height: 44px; max-width: 240px; margin-bottom: 16px; }
 }
 
 /* respect reduced motion */

@@ -30,13 +30,22 @@ asah/index.html            case 01 — AI business manager (hackathon → WIP pr
 health-u/index.html        case 02 — course project, design only
 scrim/index.html           case 03 — course project
 performing-wellness/       case 04 — research project, delivered as a client book
+todays-stock/              case 05 — Custom GPT built for Kelly's mom; no screens, by decision
 assets/css/styles.css      the entire stylesheet, all pages
 assets/js/main.js          the entire script
 assets/images/<case>/      per-case exported artifacts
 resume.pdf                 linked from the nav
 ```
 
-There is no `05` yet — the home page shows a disabled "Parents' GPT" row as a placeholder.
+**Case 05 has no images, and that is deliberate.** Today's Stock shipped as a ChatGPT Custom
+GPT — the project's central decision was *not* to build an interface, so there are no screens to
+export. Its artifacts are typeset instead: a forbidden/permitted vocabulary table, monospace
+`.spec-block` prompt strings, and an `.answer-steps` list, all styled in `styles.css` under the
+"Today's Stock — typeset artifacts" heading. Do not "fix" this by mocking up fake screens; the
+absence is argued for in Decision 01 on the page itself.
+
+(It replaced the disabled "Parents' GPT" placeholder row on 2026-08-28 — same project, renamed,
+promoted from teaser to full case. Copy source: `../content-todays-stock.md`.)
 
 ## Running it
 
@@ -103,8 +112,8 @@ worth more than Y"). Match it. Two standing rules from her:
 
 ## Current state (Aug 2026)
 
-- `main` — where the case-study writing happens. All four case studies are structurally
+- `main` — where the case-study writing happens. All five case studies are structurally
   complete; what's left is Kelly's content, tracked in `CASE-STUDY-TODO.md`.
 - `redesign` — a separate branch redesigning the **home page** visuals (split stylesheet,
-  real work imagery, a JS engine for scroll/lightbox). It predates the Performing Wellness case
-  study, so merging it will need that work carried across. Don't mix the two lines of work.
+  real work imagery, a JS engine for scroll/lightbox). It predates both the Performing Wellness
+  and Today's Stock case studies, so merging it will need both carried across. Don't mix the two lines of work.
