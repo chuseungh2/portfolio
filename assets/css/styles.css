@@ -676,7 +676,6 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
   letter-spacing: -.025em;
   max-width: 14ch;
 }
-.contact h2 .feels { font-style: italic; color: var(--vermilion); font-weight: 400; }
 .contact-links {
   display: flex;
   gap: 32px;
