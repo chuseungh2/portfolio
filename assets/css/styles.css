@@ -870,6 +870,13 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
   letter-spacing: .2em;
 }
 .case-meta-strip dd { color: var(--ink); }
+/* A prototype/demo link in the meta strip is the one clickable piece of evidence on a
+   case page, so it gets the accent rather than blending into the mono meta text. */
+.case-meta-strip dd a {
+  color: var(--vermilion);
+  border-bottom: 1px solid transparent;
+}
+.case-meta-strip dd a:hover { border-bottom-color: var(--vermilion); }
 
 /* ---------- snapshot (TL;DR) ---------- */
 .snapshot {
@@ -1087,6 +1094,14 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(2, 1fr);
+}
+/* Persona cards are dense documents, not thumbnails — at half measure inside
+   .artifact-grid their body text is unreadable. Stack them one per row instead. */
+.persona-stack {
+  margin: 32px 0;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
 }
 .artifact {
   aspect-ratio: 4 / 3;

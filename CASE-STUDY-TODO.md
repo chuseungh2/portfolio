@@ -14,7 +14,37 @@ nothing gets lost in view-source. (Earlier there was a real bug where a duplicat
 rule made all of these visible to site visitors — that's fixed. If you ever want to see the notes
 while drafting, flip that one rule to `display: inline`.)
 
-**Current count: 28 notes** — home 1 · asah 3 · health-u 2 · scrim 3 · performing-wellness 13 · todays-stock 6.
+**Current count: 25 notes** — home 1 · asah 3 · health-u 2 · scrim 3 · performing-wellness 10 · todays-stock 6.
+
+---
+
+## 2026-08-28 (later still) — probe plan, persona crops, Figma links
+
+Ahead of the SCADask interview, four things landed:
+
+1. **Performing Wellness timeline and professor confirmed.** `Timeline` is **Spring 2026** — the
+   previous "Summer Quarter 2026" was a bad inference from the Miro board's `2026-SQ` title;
+   Kelly confirms SQ meant *Spring* Quarter. `Context` now reads "IDUS 215, Prof. Craig Stehle,"
+   matching Scrim's "GRDS 323, Prof. Baker" format. Two inline notes resolved.
+2. **`pw-probe-plan.png` now exists.** Built from the two-page Cultural Probe Plan PDF Kelly sent,
+   rendered at 3× and composed as a 2-up spread (page 2 padded, not rescaled, so both pages stay
+   at the same scale). The figure in Decision 03 is uncommented; its inline note is resolved. This
+   is the strongest single artifact on the page for a research reader — it corroborates every
+   claim Decision 03 makes about the probe's design.
+3. **Scrim's persona strip was cut into three.** `scrim-personas.png` was 11520×2160 — three
+   persona cards laid end to end, illegible at any column width. Cropped into
+   `scrim-persona-{carmen,stuart,tiffany}.png` (2400×1350 each) and pulled out of `.artifact-grid`
+   into a new one-per-row `.persona-stack`, so each card renders ~1066px wide instead of ~377px.
+   Each figure got its own caption naming what that persona is load-bearing for. The original
+   strip is left in the repo, now unreferenced.
+   - **Known mismatch, left alone by Kelly's call:** the image card reads "43 | House Wife" while
+     the site copy says "43, recreational player" — and the image's own background paragraph says
+     "35-year-old," so the source artifact contradicts itself. The copy stays as-is; the alt text
+     describes the card without restating the disputed label.
+4. **First clickable evidence on the site.** Figma prototype links added to Scrim and Health U
+   meta strips as a new `Prototype` row, styled vermilion via a new `.case-meta-strip dd a` rule.
+   Both were verified to load without a Figma login (checked in a logged-out browser). This
+   closes the oldest item in the July audit — "zero clickable evidence."
 
 ---
 
