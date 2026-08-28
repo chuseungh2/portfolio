@@ -18,6 +18,45 @@ while drafting, flip that one rule to `display: inline`.)
 
 ---
 
+## 2026-08-28 — em-dashes removed site-wide, and the client book is now hosted
+
+**Every em-dash is gone from the site: 322 of them, across all six pages** (PW 95, Today's Stock 62,
+Asah 54, Scrim 53, Health U 45, home 13). Kelly's call, acting on `docs/PORTFOLIO_AUDIT.md` section
+B, which flagged em-dash density as the main reason the copy read as AI-generated. This reverses a
+standing invariant in the root `CLAUDE.md`; that file has been updated so a future session doesn't
+restore them.
+
+Not a find-and-replace. Every one was rewritten in context, choosing the punctuation the sentence
+actually needed: a comma before a conjunction, a colon before a list or an explanation, a full stop
+where the clause was independent, parentheses for a true aside. Compound hyphens (hi-fi, 27-spread,
+semi-structured) are untouched. Some structural dashes became the site's own middot instead
+(`<title>` name/role separators, the `01 — 05` section range became `01 / 05`), and the decorative
+leading dashes on section labels (`— About`, `— The problem`) were simply dropped.
+
+⚠️ **`content-*.md` still contains 340 em-dashes and is now out of sync with the HTML.** Copying
+copy out of those files verbatim will reintroduce them. Flagged at the top of the root `CLAUDE.md`
+too. Worth a cleanup pass when there's time; nothing visitor-facing depends on it.
+
+## 2026-08-28 — Performing Wellness: five more book spreads and the full PDF
+
+Kelly asked for more of the book's interior and a way to read the whole thing.
+
+- **The client book is now hosted**: `assets/docs/performing-wellness-client-book.pdf`, linked from
+  a new `Deliverable` row in the meta strip and inline in `07 Outcome`. Rendered down from the
+  18MB original to 6.2MB (pages rasterised at 1600px, JPEG q0.72); body text was checked at zoom
+  and is still fully legible. New `.case-doc-link` style in `styles.css`.
+  **Note this is a team deliverable now public** (Bailee, Diana, Chanhwi, Kelly) — Kelly approved.
+- **Five spreads added** from the source PDF, none of which were being shown before:
+  `pw-emotion-authentic` (the other half of the emotional core, next to *constructive*),
+  `pw-benefit-connected` (a Benefits-layer spread), `pw-feature-honest` (a Features-layer spread),
+  `pw-divider-benefits` (a green divider — `6d` argues for these and previously showed none), and
+  `pw-social-impact` (the closing Social Impact / Bibliography spread, which also puts the book's
+  real sources on screen: McKinsey, Medicat, Cybersmile, Pew, UNICEF).
+- Source of all of them: `Documents/Y2/Spring/IDUS 215/Client_Book_IDUS215.pdf`. Its path
+  independently confirms the Spring 2026 timeline.
+
+---
+
 ## 2026-08-28 — CORRECTION: the cultural probe was never fielded
 
 **This was the most serious factual problem the site has had.** Kelly confirmed the *Post vs.

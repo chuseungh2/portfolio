@@ -878,6 +878,21 @@ a.work-row:hover .row-thumb { transform: scale(1.02); }
 }
 .case-meta-strip dd a:hover { border-bottom-color: var(--vermilion); }
 
+/* An inline link to a downloadable deliverable (the client book PDF). Set apart from
+   body links so it reads as "there is a document here," not as a citation. */
+.case-doc-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--vermilion);
+  border-bottom: 1px solid var(--vermilion);
+  padding-bottom: 2px;
+}
+.case-doc-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
 /* ---------- snapshot (TL;DR) ---------- */
 .snapshot {
   padding: 80px var(--gutter);
